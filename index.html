@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="botonera" style="display: flex; gap: 32px; margin-bottom: 20px;">
+        <div class="boton-materia">
+            <button id="btn-arqui" class="btn-grande">ARQUI</button>
+            <br>
+            <select id="turnoSelect-arqui" style="display:none; margin-top:8px;">
+                <option value="">Selecciona turno</option>
+            </select>
+        </div>
+        <div class="boton-materia">
+            <button id="btn-mat2" class="btn-grande">MAT2</button>
+            <br>
+            <select id="turnoSelect-mat2" style="display:none; margin-top:8px;">
+                <option value="">Selecciona turno</option>
+            </select>
+        </div>
+        <div class="boton-materia">
+            <button id="btn-taller" class="btn-grande">TALLER</button>
+            <br>
+            <select id="turnoSelect-taller" style="display:none; margin-top:8px;">
+                <option value="">Selecciona turno</option>
+            </select>
+        </div>
+    </div>
+    <div id="tabla-horario"></div>
+</body>
+</html>

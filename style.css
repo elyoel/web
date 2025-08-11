@@ -1,0 +1,123 @@
+#botonera {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.boton-materia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-grande {
+  font-size: 1.4em;
+  padding: 18px 36px;
+  margin-bottom: 0;
+  border-radius: 8px;
+  border: 2px solid #222;
+  cursor: pointer;
+  background: #f5f5f5;
+  transition: background 0.2s, color 0.2s;
+}
+
+button.active {
+  background: #333;
+  color: #fff;
+}
+
+.boton-materia select {
+  margin-top: 12px;
+  font-size: 1.2em;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: 2px solid #222;
+  background: #f5f5f5;
+  color: #222;
+  font-weight: bold;
+  outline: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.boton-materia select:focus {
+  background: #e0e0e0;
+  border-color: #333;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+th, td {
+  border: 2px solid #222;
+  padding: 6px 8px;
+}
+
+th {
+  background: #eee;
+}
+
+.cadp {
+  background: #00b0f0;
+  color: #000;
+  font-weight: bold;
+}
+
+.oc {
+  background: #00ccf0;
+  font-weight: bold;
+  color: #000;
+}
+
+.mat1 {
+  background: #ffff00;
+  color: #000;
+  font-weight: bold;
+}
+
+.taller {
+  background: #ffc0cb;
+  color: #000;
+  font-weight: bold;
+}
+
+.superpuesto {
+  background: #ff3333 !important;
+  color: #fff !important;
+  font-weight: bold;
+}
+.superpuesto span {
+  display: block;
+  margin-bottom: 2px;
+}
+
+@media (max-width: 600px) {
+  #botonera {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  .btn-grande {
+    width: 90vw;
+    font-size: 1.1em;
+    padding: 14px 0;
+  }
+  .boton-materia select {
+    width: 90vw;
+    font-size: 1em;
+    padding: 8px 0;
+  }
+  table {
+    font-size: 0.85em;
+    width: 100vw;
+    overflow-x: auto;
+    display: block;
+  }
+  th, td {
+    padding: 4px 2px;
+  }
+}
