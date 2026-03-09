@@ -2,7 +2,10 @@
 const materias = [
     { nombre: "ARQUI", color: "cadp" },
     { nombre: "MAT2", color: "mat1" },
-    { nombre: "TALLER", color: "taller" }
+    { nombre: "TALLER", color: "taller" },
+    { nombre: "FOD", color: "fod" },
+    { nombre: "Semi-Python", color: "semi" },
+    { nombre: "AyED", color: "ayed" }
 ];
 
 // Turnos de ARQUI (no tocar, ya está bien)
@@ -228,6 +231,109 @@ const turnosTaller = [
     }
 ];
 
+// Turnos de FOD (teoría y práctica vinculadas)
+const turnosFOD = [
+    {
+        id: "1",
+        horarios: [
+            // Teoría (T) - turno mañana
+            { dia: "Viernes", hora: "8:30 - 9:00", tipo: "T" }, { dia: "Viernes", hora: "9:00 - 9:30", tipo: "T" }, { dia: "Viernes", hora: "9:30 - 10:00", tipo: "T" }, { dia: "Viernes", hora: "10:00 - 10:30", tipo: "T" },
+            // Práctica (P) - turno mañana
+            { dia: "Martes", hora: "11:00 - 11:30", tipo: "P" }, { dia: "Martes", hora: "11:30 - 12:00", tipo: "P" }, { dia: "Martes", hora: "12:00 - 12:30", tipo: "P" }, { dia: "Martes", hora: "12:30 - 13:00", tipo: "P" }
+        ]
+    },
+    {
+        id: "2",
+        horarios: [
+            // Teoría (T) - turno tarde
+            { dia: "Jueves", hora: "14:30 - 15:00", tipo: "T" }, { dia: "Jueves", hora: "15:00 - 15:30", tipo: "T" }, { dia: "Jueves", hora: "15:30 - 16:00", tipo: "T" }, { dia: "Jueves", hora: "16:00 - 16:30", tipo: "T" },
+            // Práctica (P) - turno tarde
+            { dia: "Martes", hora: "18:00 - 18:30", tipo: "P" }, { dia: "Martes", hora: "18:30 - 19:00", tipo: "P" }, { dia: "Martes", hora: "19:00 - 19:30", tipo: "P" }, { dia: "Martes", hora: "19:30 - 20:00", tipo: "P" }
+        ]
+    }
+];
+
+// Turnos de Semi-Python (teoría y práctica vinculadas)
+const turnosSemiPython = [
+    {
+        id: "1",
+        horarios: [
+            // Teoría (T) - turno mañana
+            { dia: "Martes", hora: "8:30 - 9:00", tipo: "T" }, { dia: "Martes", hora: "9:00 - 9:30", tipo: "T" }, { dia: "Martes", hora: "9:30 - 10:00", tipo: "T" }, { dia: "Martes", hora: "10:00 - 10:30", tipo: "T" },
+            // Práctica (P) - turno mañana
+            { dia: "Jueves", hora: "8:00 - 8:30", tipo: "P" }, { dia: "Jueves", hora: "8:30 - 9:00", tipo: "P" }, { dia: "Jueves", hora: "9:00 - 9:30", tipo: "P" }, { dia: "Jueves", hora: "9:30 - 10:00", tipo: "P" }
+        ]
+    },
+    {
+        id: "2",
+        horarios: [
+            // Teoría (T) - turno tarde
+            { dia: "Martes", hora: "15:00 - 15:30", tipo: "T" }, { dia: "Martes", hora: "15:30 - 16:00", tipo: "T" }, { dia: "Martes", hora: "16:00 - 16:30", tipo: "T" }, { dia: "Martes", hora: "16:30 - 17:00", tipo: "T" },
+            // Práctica (P) - turno tarde
+            { dia: "Jueves", hora: "16:00 - 16:30", tipo: "P" }, { dia: "Jueves", hora: "16:30 - 17:00", tipo: "P" }, { dia: "Jueves", hora: "17:00 - 17:30", tipo: "P" }, { dia: "Jueves", hora: "17:30 - 18:00", tipo: "P" }
+        ]
+    }
+];
+
+// Turnos de AyED (teoría y práctica por separado)
+const turnosAyEDTeoria = [
+    {
+        id: "TM", // turno mañana
+        horarios: [
+            { dia: "Lunes", hora: "11:00 - 11:30", tipo: "T" }, { dia: "Lunes", hora: "11:30 - 12:00", tipo: "T" }, { dia: "Lunes", hora: "12:00 - 12:30", tipo: "T" }, { dia: "Lunes", hora: "12:30 - 13:00", tipo: "T" },
+            { dia: "Jueves", hora: "12:30 - 13:00", tipo: "T" }, { dia: "Jueves", hora: "13:00 - 13:30", tipo: "T" }, { dia: "Jueves", hora: "13:30 - 14:00", tipo: "T" }, { dia: "Jueves", hora: "14:00 - 14:30", tipo: "T" }
+        ]
+    },
+    {
+        id: "TT", // turno tarde
+        horarios: [
+            { dia: "Martes", hora: "16:30 - 17:00", tipo: "T" }, { dia: "Martes", hora: "17:00 - 17:30", tipo: "T" }, { dia: "Martes", hora: "17:30 - 18:00", tipo: "T" }, { dia: "Martes", hora: "18:00 - 18:30", tipo: "T" },
+            { dia: "Miércoles", hora: "17:00 - 17:30", tipo: "T" }, { dia: "Miércoles", hora: "17:30 - 18:00", tipo: "T" }, { dia: "Miércoles", hora: "18:00 - 18:30", tipo: "T" }, { dia: "Miércoles", hora: "18:30 - 19:00", tipo: "T" }
+        ]
+    }
+];
+
+const turnosAyEDPractica = [
+    {
+        id: "P1",
+        horarios: [
+            { dia: "Lunes", hora: "14:00 - 14:30", tipo: "P" }, { dia: "Lunes", hora: "14:30 - 15:00", tipo: "P" }, { dia: "Lunes", hora: "15:00 - 15:30", tipo: "P" }, { dia: "Lunes", hora: "15:30 - 16:00", tipo: "P" }
+        ]
+    },
+    {
+        id: "P2",
+        horarios: [
+            { dia: "Martes", hora: "9:00 - 9:30", tipo: "P" }, { dia: "Martes", hora: "9:30 - 10:00", tipo: "P" }, { dia: "Martes", hora: "10:00 - 10:30", tipo: "P" }, { dia: "Martes", hora: "10:30 - 11:00", tipo: "P" }
+        ]
+    },
+    {
+        id: "P3",
+        horarios: [
+            { dia: "Martes", hora: "14:00 - 14:30", tipo: "P" }, { dia: "Martes", hora: "14:30 - 15:00", tipo: "P" }, { dia: "Martes", hora: "15:00 - 15:30", tipo: "P" }, { dia: "Martes", hora: "15:30 - 16:00", tipo: "P" }
+        ]
+    },
+    {
+        id: "P4",
+        horarios: [
+            { dia: "Jueves", hora: "10:00 - 10:30", tipo: "P" }, { dia: "Jueves", hora: "10:30 - 11:00", tipo: "P" }, { dia: "Jueves", hora: "11:00 - 11:30", tipo: "P" }, { dia: "Jueves", hora: "11:30 - 12:00", tipo: "P" }
+        ]
+    },
+    {
+        id: "P5",
+        horarios: [
+            { dia: "Jueves", hora: "18:00 - 18:30", tipo: "P" }, { dia: "Jueves", hora: "18:30 - 19:00", tipo: "P" }, { dia: "Jueves", hora: "19:00 - 19:30", tipo: "P" }, { dia: "Jueves", hora: "19:30 - 20:00", tipo: "P" }
+        ]
+    },
+    {
+        id: "P6",
+        horarios: [
+            { dia: "Viernes", hora: "14:00 - 14:30", tipo: "P" }, { dia: "Viernes", hora: "14:30 - 15:00", tipo: "P" }, { dia: "Viernes", hora: "15:00 - 15:30", tipo: "P" }, { dia: "Viernes", hora: "15:30 - 16:00", tipo: "P" }
+        ]
+    }
+];
+
+// Horas y días base (todas las posibles)
+
 // Horas y días base (todas las posibles)
 const todasLasHoras = [
     "8:00 - 8:30", "8:30 - 9:00", "9:00 - 9:30", "9:30 - 10:00", "10:00 - 10:30",
@@ -244,17 +350,44 @@ const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
 let materiasSeleccionadas = {
     ARQUI: false,
     MAT2: false,
-    TALLER: false
+    TALLER: false,
+    FOD: false,
+    "Semi-Python": false
 };
 let turnosSeleccionados = {
     ARQUI: "",
     MAT2: "",
-    TALLER: ""
+    TALLER: "",
+    FOD: "",
+    "Semi-Python": "",
+    "AyED": {
+        teoria: "",
+        practica: ""
+    }
 };
 
 // Función para saber si hay clase de una materia en ese día/hora
 function hayMateria(materia, dia, hora) {
-    let turnosArr = materia === "ARQUI" ? turnosArqui : materia === "MAT2" ? turnosMat2 : turnosTaller;
+    if (materia === "AyED") {
+        if (!materiasSeleccionadas.AyED) return null;
+        const tId = turnosSeleccionados.AyED.teoria;
+        const pId = turnosSeleccionados.AyED.practica;
+        if (tId) {
+            const turnoT = turnosAyEDTeoria.find(t => t.id === tId);
+            if (turnoT && turnoT.horarios.some(h => h.dia === dia && h.hora === hora)) return "T";
+        }
+        if (pId) {
+            const turnoP = turnosAyEDPractica.find(t => t.id === pId);
+            if (turnoP && turnoP.horarios.some(h => h.dia === dia && h.hora === hora)) return "P";
+        }
+        return null;
+    }
+
+    let turnosArr = materia === "ARQUI" ? turnosArqui :
+                    materia === "MAT2" ? turnosMat2 :
+                    materia === "FOD" ? turnosFOD :
+                    materia === "Semi-Python" ? turnosSemiPython :
+                    turnosTaller;
     let turnoId = turnosSeleccionados[materia];
     if (!materiasSeleccionadas[materia] || !turnoId) return null;
     const turno = turnosArr.find(t => t.id === turnoId);
@@ -269,7 +402,26 @@ function obtenerHorasVisibles() {
     let bloques = [];
     materias.forEach(m => {
         if (!materiasSeleccionadas[m.nombre]) return;
-        let turnosArr = m.nombre === "ARQUI" ? turnosArqui : m.nombre === "MAT2" ? turnosMat2 : turnosTaller;
+        if (m.nombre === "AyED") {
+            if (!materiasSeleccionadas.AyED) return;
+            const tId = turnosSeleccionados.AyED.teoria;
+            const pId = turnosSeleccionados.AyED.practica;
+            if (tId) {
+                const turnoT = turnosAyEDTeoria.find(t => t.id === tId);
+                if (turnoT) turnoT.horarios.forEach(h => { if (!bloques.includes(h.hora)) bloques.push(h.hora); });
+            }
+            if (pId) {
+                const turnoP = turnosAyEDPractica.find(t => t.id === pId);
+                if (turnoP) turnoP.horarios.forEach(h => { if (!bloques.includes(h.hora)) bloques.push(h.hora); });
+            }
+            return;
+        }
+
+        let turnosArr = m.nombre === "ARQUI" ? turnosArqui :
+                        m.nombre === "MAT2" ? turnosMat2 :
+                        m.nombre === "FOD" ? turnosFOD :
+                        m.nombre === "Semi-Python" ? turnosSemiPython :
+                        turnosTaller;
         let turnoId = turnosSeleccionados[m.nombre];
         if (!turnoId) return;
         const turno = turnosArr.find(t => t.id === turnoId);
@@ -348,6 +500,26 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("turnoSelect-taller").style.display = materiasSeleccionadas.TALLER ? "inline" : "none";
         generarTabla();
     });
+    document.getElementById("btn-fod").addEventListener("click", function () {
+        materiasSeleccionadas.FOD = !materiasSeleccionadas.FOD;
+        this.classList.toggle("active", materiasSeleccionadas.FOD);
+        document.getElementById("turnoSelect-fod").style.display = materiasSeleccionadas.FOD ? "inline" : "none";
+        generarTabla();
+    });
+    document.getElementById("btn-semi").addEventListener("click", function () {
+        materiasSeleccionadas["Semi-Python"] = !materiasSeleccionadas["Semi-Python"];
+        this.classList.toggle("active", materiasSeleccionadas["Semi-Python"]);
+        document.getElementById("turnoSelect-semi").style.display = materiasSeleccionadas["Semi-Python"] ? "inline" : "none";
+        generarTabla();
+    });
+    document.getElementById("btn-ayed").addEventListener("click", function () {
+        materiasSeleccionadas.AyED = !materiasSeleccionadas.AyED;
+        this.classList.toggle("active", materiasSeleccionadas.AyED);
+        let visible = materiasSeleccionadas.AyED ? "inline" : "none";
+        document.getElementById("turnoSelect-ayed-teoria").style.display = visible;
+        document.getElementById("turnoSelect-ayed-practica").style.display = visible;
+        generarTabla();
+    });
 
     // Select de turnos por materia
     document.getElementById("turnoSelect-arqui").addEventListener("change", function () {
@@ -360,6 +532,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     document.getElementById("turnoSelect-taller").addEventListener("change", function () {
         turnosSeleccionados.TALLER = this.value;
+        generarTabla();
+    });
+    document.getElementById("turnoSelect-fod").addEventListener("change", function () {
+        turnosSeleccionados.FOD = this.value;
+        generarTabla();
+    });
+    document.getElementById("turnoSelect-semi").addEventListener("change", function () {
+        turnosSeleccionados["Semi-Python"] = this.value;
+        generarTabla();
+    });
+    document.getElementById("turnoSelect-ayed-teoria").addEventListener("change", function () {
+        turnosSeleccionados.AyED.teoria = this.value;
+        generarTabla();
+    });
+    document.getElementById("turnoSelect-ayed-practica").addEventListener("change", function () {
+        turnosSeleccionados.AyED.practica = this.value;
         generarTabla();
     });
 
@@ -402,4 +590,47 @@ function inicializarSelects() {
         selectTaller.appendChild(opt);
     });
     selectTaller.style.display = "none";
+
+    // FOD
+    let selectFod = document.getElementById("turnoSelect-fod");
+    selectFod.innerHTML = '<option value="">Selecciona turno</option>';
+    turnosFOD.forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t.id;
+        opt.textContent = t.id;
+        selectFod.appendChild(opt);
+    });
+    selectFod.style.display = "none";
+
+    // Semi-Python
+    let selectSemi = document.getElementById("turnoSelect-semi");
+    selectSemi.innerHTML = '<option value="">Selecciona turno</option>';
+    turnosSemiPython.forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t.id;
+        opt.textContent = t.id;
+        selectSemi.appendChild(opt);
+    });
+    selectSemi.style.display = "none";
+
+    // AyED
+    let selectAyEDTeoria = document.getElementById("turnoSelect-ayed-teoria");
+    selectAyEDTeoria.innerHTML = '<option value="">Selecciona teoría</option>';
+    turnosAyEDTeoria.forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t.id;
+        opt.textContent = t.id;
+        selectAyEDTeoria.appendChild(opt);
+    });
+    selectAyEDTeoria.style.display = "none";
+
+    let selectAyEDPractica = document.getElementById("turnoSelect-ayed-practica");
+    selectAyEDPractica.innerHTML = '<option value="">Selecciona práctica</option>';
+    turnosAyEDPractica.forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t.id;
+        opt.textContent = t.id;
+        selectAyEDPractica.appendChild(opt);
+    });
+    selectAyEDPractica.style.display = "none";
 }

@@ -79,6 +79,24 @@ th {
   font-weight: bold;
 }
 
+.fod {
+  background: hsl(226, 29%, 49%);
+  color: #000;
+  font-weight: bold;
+}
+
+.semi {
+  background: #b2ffb2;
+  color: #000;
+  font-weight: bold;
+}
+
+.ayed {
+  background: #c0b2ff;
+  color: #000;
+  font-weight: bold;
+}
+
 .taller {
   background: #ffc0cb;
   color: #000;
