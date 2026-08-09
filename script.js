@@ -1,11 +1,11 @@
-// Configuración de materias y talleres
+// Configuración de materias y colores (agrega nuevas materias aquí)
 const materias = [
-    { nombre: "ARQUI", color: "cadp" },
-    { nombre: "MAT2", color: "mat1" },
-    { nombre: "TALLER", color: "taller" },
-    { nombre: "FOD", color: "fod" },
-    { nombre: "Semi-Python", color: "semi" },
-    { nombre: "AyED", color: "ayed" }
+    { nombre: "ARQUI - 2025", color: "cadp" },
+    { nombre: "MAT2 - 2025", color: "mat1" },
+    { nombre: "TALLER - 2025", color: "taller" },
+    { nombre: "FOD - 2025", color: "fod" },
+    { nombre: "Semi-Python - 2026", color: "semi" },
+    { nombre: "AyED - 2026", color: "ayed" }
 ];
 
 // Turnos de ARQUI (no tocar, ya está bien)
@@ -13,45 +13,33 @@ const turnosArqui = [
     {
         id: "1",
         horarios: [
-            // Teoría (T)
-            { dia: "Miércoles", hora: "8:30 - 9:00", tipo: "T" }, { dia: "Miércoles", hora: "9:00 - 9:30", tipo: "T" }, { dia: "Miércoles", hora: "9:30 - 10:00", tipo: "T" },
-            { dia: "Miércoles", hora: "10:00 - 10:30", tipo: "T" }, { dia: "Miércoles", hora: "10:30 - 11:00", tipo: "T" }, { dia: "Miércoles", hora: "11:00 - 11:30", tipo: "T" },
-            // Práctica (P)
-            { dia: "Martes", hora: "10:00 - 10:30", tipo: "P" }, { dia: "Martes", hora: "10:30 - 11:00", tipo: "P" }, { dia: "Martes", hora: "11:00 - 11:30", tipo: "P" },
-            { dia: "Viernes", hora: "10:00 - 10:30", tipo: "P" }, { dia: "Viernes", hora: "10:30 - 11:00", tipo: "P" }, { dia: "Viernes", hora: "11:00 - 11:30", tipo: "P" }
+            { dia: "Miércoles", hora: "8:30 - 11:30", tipo: "T" },
+            { dia: "Martes", hora: "10:00 - 11:30", tipo: "P" },
+            { dia: "Viernes", hora: "10:00 - 11:30", tipo: "P" }
         ]
     },
     {
         id: "2",
         horarios: [
-            // Teoría (T)
-            { dia: "Miércoles", hora: "11:30 - 12:00", tipo: "T" }, { dia: "Miércoles", hora: "12:00 - 12:30", tipo: "T" }, { dia: "Miércoles", hora: "12:30 - 13:00", tipo: "T" },
-            { dia: "Miércoles", hora: "13:00 - 13:30", tipo: "T" }, { dia: "Miércoles", hora: "13:30 - 14:00", tipo: "T" }, { dia: "Miércoles", hora: "14:00 - 14:30", tipo: "T" },
-            // Práctica (P)
-            { dia: "Martes", hora: "13:30 - 14:00", tipo: "P" }, { dia: "Martes", hora: "14:00 - 14:30", tipo: "P" }, { dia: "Martes", hora: "14:30 - 15:00", tipo: "P" },
-            { dia: "Viernes", hora: "13:30 - 14:00", tipo: "P" }, { dia: "Viernes", hora: "14:00 - 14:30", tipo: "P" }, { dia: "Viernes", hora: "14:30 - 15:00", tipo: "P" }
+            { dia: "Miércoles", hora: "11:30 - 14:30", tipo: "T" },
+            { dia: "Martes", hora: "13:30 - 15:00", tipo: "P" },
+            { dia: "Viernes", hora: "13:30 - 15:00", tipo: "P" }
         ]
     },
     {
         id: "3",
         horarios: [
-            // Teoría (T)
-            { dia: "Miércoles", hora: "18:00 - 18:30", tipo: "T" }, { dia: "Miércoles", hora: "18:30 - 19:00", tipo: "T" }, { dia: "Miércoles", hora: "19:00 - 19:30", tipo: "T" },
-            { dia: "Miércoles", hora: "19:30 - 20:00", tipo: "T" }, { dia: "Miércoles", hora: "20:00 - 20:30", tipo: "T" }, { dia: "Miércoles", hora: "20:30 - 21:00", tipo: "T" },
-            // Práctica (P)
-            { dia: "Martes", hora: "17:00 - 17:30", tipo: "P" }, { dia: "Martes", hora: "17:30 - 18:00", tipo: "P" }, { dia: "Martes", hora: "18:00 - 18:30", tipo: "P" },
-            { dia: "Viernes", hora: "17:00 - 17:30", tipo: "P" }, { dia: "Viernes", hora: "17:30 - 18:00", tipo: "P" }, { dia: "Viernes", hora: "18:00 - 18:30", tipo: "P" }
+            { dia: "Miércoles", hora: "18:00 - 21:00", tipo: "T" },
+            { dia: "Martes", hora: "17:00 - 18:30", tipo: "P" },
+            { dia: "Viernes", hora: "17:00 - 18:30", tipo: "P" }
         ]
     },
     {
         id: "4",
         horarios: [
-            // Teoría (T)
-            { dia: "Miércoles", hora: "14:30 - 15:00", tipo: "T" }, { dia: "Miércoles", hora: "15:00 - 15:30", tipo: "T" }, { dia: "Miércoles", hora: "15:30 - 16:00", tipo: "T" },
-            { dia: "Miércoles", hora: "16:00 - 16:30", tipo: "T" }, { dia: "Miércoles", hora: "16:30 - 17:00", tipo: "T" }, { dia: "Miércoles", hora: "17:00 - 17:30", tipo: "T" },
-            // Práctica (P)
-            { dia: "Martes", hora: "20:30 - 21:00", tipo: "P" }, { dia: "Martes", hora: "21:00 - 21:30", tipo: "P" }, { dia: "Martes", hora: "21:30 - 22:00", tipo: "P" },
-            { dia: "Viernes", hora: "20:30 - 21:00", tipo: "P" }, { dia: "Viernes", hora: "21:00 - 21:30", tipo: "P" }, { dia: "Viernes", hora: "21:30 - 22:00", tipo: "P" }
+            { dia: "Miércoles", hora: "14:30 - 17:30", tipo: "T" },
+            { dia: "Martes", hora: "20:30 - 22:00", tipo: "P" },
+            { dia: "Viernes", hora: "20:30 - 22:00", tipo: "P" }
         ]
     }
 ];
@@ -61,56 +49,36 @@ const turnosMat2 = [
     {
         id: "1",
         horarios: [
-            // Lunes
-            { dia: "Lunes", hora: "8:30 - 9:00", tipo: "T/P" }, { dia: "Lunes", hora: "9:00 - 9:30", tipo: "T/P" }, { dia: "Lunes", hora: "9:30 - 10:00", tipo: "T/P" },
-            { dia: "Lunes", hora: "10:00 - 10:30", tipo: "T/P" }, { dia: "Lunes", hora: "10:30 - 11:00", tipo: "T/P" },
-            // Jueves
-            { dia: "Jueves", hora: "8:30 - 9:00", tipo: "T/P" }, { dia: "Jueves", hora: "9:00 - 9:30", tipo: "T/P" }, { dia: "Jueves", hora: "9:30 - 10:00", tipo: "T/P" },
-            { dia: "Jueves", hora: "10:00 - 10:30", tipo: "T/P" }, { dia: "Jueves", hora: "10:30 - 11:00", tipo: "T/P" }
+            { dia: "Lunes", hora: "8:30 - 11:00", tipo: "T/P" },
+            { dia: "Jueves", hora: "8:30 - 11:00", tipo: "T/P" }
         ]
     },
     {
         id: "2",
         horarios: [
-            // Lunes
-            { dia: "Lunes", hora: "11:00 - 11:30", tipo: "T/P" }, { dia: "Lunes", hora: "11:30 - 12:00", tipo: "T/P" }, { dia: "Lunes", hora: "12:00 - 12:30", tipo: "T/P" },
-            { dia: "Lunes", hora: "12:30 - 13:00", tipo: "T/P" }, { dia: "Lunes", hora: "13:00 - 13:30", tipo: "T/P" },
-            // Jueves
-            { dia: "Jueves", hora: "11:00 - 11:30", tipo: "T/P" }, { dia: "Jueves", hora: "11:30 - 12:00", tipo: "T/P" }, { dia: "Jueves", hora: "12:00 - 12:30", tipo: "T/P" },
-            { dia: "Jueves", hora: "12:30 - 13:00", tipo: "T/P" }, { dia: "Jueves", hora: "13:00 - 13:30", tipo: "T/P" }
+            { dia: "Lunes", hora: "11:00 - 13:30", tipo: "T/P" },
+            { dia: "Jueves", hora: "11:00 - 13:30", tipo: "T/P" }
         ]
     },
     {
         id: "3",
         horarios: [
-            // Lunes
-            { dia: "Lunes", hora: "13:30 - 14:00", tipo: "T/P" }, { dia: "Lunes", hora: "14:00 - 14:30", tipo: "T/P" }, { dia: "Lunes", hora: "14:30 - 15:00", tipo: "T/P" },
-            { dia: "Lunes", hora: "15:00 - 15:30", tipo: "T/P" }, { dia: "Lunes", hora: "15:30 - 16:00", tipo: "T/P" },
-            // Jueves
-            { dia: "Jueves", hora: "13:30 - 14:00", tipo: "T/P" }, { dia: "Jueves", hora: "14:00 - 14:30", tipo: "T/P" }, { dia: "Jueves", hora: "14:30 - 15:00", tipo: "T/P" },
-            { dia: "Jueves", hora: "15:00 - 15:30", tipo: "T/P" }, { dia: "Jueves", hora: "15:30 - 16:00", tipo: "T/P" }
+            { dia: "Lunes", hora: "13:30 - 16:00", tipo: "T/P" },
+            { dia: "Jueves", hora: "13:30 - 16:00", tipo: "T/P" }
         ]
     },
     {
         id: "4",
         horarios: [
-            // Lunes
-            { dia: "Lunes", hora: "16:00 - 16:30", tipo: "T/P" }, { dia: "Lunes", hora: "16:30 - 17:00", tipo: "T/P" }, { dia: "Lunes", hora: "17:00 - 17:30", tipo: "T/P" },
-            { dia: "Lunes", hora: "17:30 - 18:00", tipo: "T/P" }, { dia: "Lunes", hora: "18:00 - 18:30", tipo: "T/P" },
-            // Jueves
-            { dia: "Jueves", hora: "16:00 - 16:30", tipo: "T/P" }, { dia: "Jueves", hora: "16:30 - 17:00", tipo: "T/P" }, { dia: "Jueves", hora: "17:00 - 17:30", tipo: "T/P" },
-            { dia: "Jueves", hora: "17:30 - 18:00", tipo: "T/P" }, { dia: "Jueves", hora: "18:00 - 18:30", tipo: "T/P" }
+            { dia: "Lunes", hora: "16:00 - 18:30", tipo: "T/P" },
+            { dia: "Jueves", hora: "16:00 - 18:30", tipo: "T/P" }
         ]
     },
     {
         id: "5",
         horarios: [
-            // Lunes
-            { dia: "Lunes", hora: "18:30 - 19:00", tipo: "T/P" }, { dia: "Lunes", hora: "19:00 - 19:30", tipo: "T/P" }, { dia: "Lunes", hora: "19:30 - 20:00", tipo: "T/P" },
-            { dia: "Lunes", hora: "20:00 - 20:30", tipo: "T/P" }, { dia: "Lunes", hora: "20:30 - 21:00", tipo: "T/P" },
-            // Jueves
-            { dia: "Jueves", hora: "18:30 - 19:00", tipo: "T/P" }, { dia: "Jueves", hora: "19:00 - 19:30", tipo: "T/P" }, { dia: "Jueves", hora: "19:30 - 20:00", tipo: "T/P" },
-            { dia: "Jueves", hora: "20:00 - 20:30", tipo: "T/P" }, { dia: "Jueves", hora: "20:30 - 21:00", tipo: "T/P" }
+            { dia: "Lunes", hora: "18:30 - 21:00", tipo: "T/P" },
+            { dia: "Jueves", hora: "18:30 - 21:00", tipo: "T/P" }
         ]
     }
 ];
@@ -120,113 +88,113 @@ const turnosTaller = [
     {
         id: "TA",
         horarios: [
-            { dia: "Lunes", hora: "8:00 - 8:30", tipo: "T/P" }, { dia: "Lunes", hora: "8:30 - 9:00", tipo: "T/P" }, { dia: "Lunes", hora: "9:00 - 9:30", tipo: "T/P" },
-            { dia: "Jueves", hora: "8:00 - 8:30", tipo: "T/P" }, { dia: "Jueves", hora: "8:30 - 9:00", tipo: "T/P" }, { dia: "Jueves", hora: "9:00 - 9:30", tipo: "T/P" }
+            { dia: "Lunes", hora: "8:00 - 9:30", tipo: "T/P" },
+            { dia: "Jueves", hora: "8:00 - 9:30", tipo: "T/P" }
         ]
     },
     {
         id: "TB",
         horarios: [
-            { dia: "Lunes", hora: "9:30 - 10:00", tipo: "T/P" }, { dia: "Lunes", hora: "10:00 - 10:30", tipo: "T/P" }, { dia: "Lunes", hora: "10:30 - 11:00", tipo: "T/P" },
-            { dia: "Jueves", hora: "9:30 - 10:00", tipo: "T/P" }, { dia: "Jueves", hora: "10:00 - 10:30", tipo: "T/P" }, { dia: "Jueves", hora: "10:30 - 11:00", tipo: "T/P" }
+            { dia: "Lunes", hora: "9:30 - 11:00", tipo: "T/P" },
+            { dia: "Jueves", hora: "9:30 - 11:00", tipo: "T/P" }
         ]
     },
     {
         id: "TC",
         horarios: [
-            { dia: "Lunes", hora: "11:00 - 11:30", tipo: "T/P" }, { dia: "Lunes", hora: "11:30 - 12:00", tipo: "T/P" }, { dia: "Lunes", hora: "12:00 - 12:30", tipo: "T/P" },
-            { dia: "Miércoles", hora: "11:00 - 11:30", tipo: "T/P" }, { dia: "Miércoles", hora: "11:30 - 12:00", tipo: "T/P" }, { dia: "Miércoles", hora: "12:00 - 12:30", tipo: "T/P" }
+            { dia: "Lunes", hora: "11:00 - 12:30", tipo: "T/P" },
+            { dia: "Miércoles", hora: "11:00 - 12:30", tipo: "T/P" }
         ]
     },
     {
         id: "TD",
         horarios: [
-            { dia: "Lunes", hora: "12:30 - 13:00", tipo: "T/P" }, { dia: "Lunes", hora: "13:00 - 13:30", tipo: "T/P" }, { dia: "Lunes", hora: "13:30 - 14:00", tipo: "T/P" },
-            { dia: "Miércoles", hora: "12:30 - 13:00", tipo: "T/P" }, { dia: "Miércoles", hora: "13:00 - 13:30", tipo: "T/P" }, { dia: "Miércoles", hora: "13:30 - 14:00", tipo: "T/P" }
+            { dia: "Lunes", hora: "12:30 - 14:00", tipo: "T/P" },
+            { dia: "Miércoles", hora: "12:30 - 14:00", tipo: "T/P" }
         ]
     },
     {
         id: "TE",
         horarios: [
-            { dia: "Martes", hora: "8:00 - 8:30", tipo: "T/P" }, { dia: "Martes", hora: "8:30 - 9:00", tipo: "T/P" }, { dia: "Martes", hora: "9:00 - 9:30", tipo: "T/P" },
-            { dia: "Viernes", hora: "8:00 - 8:30", tipo: "T/P" }, { dia: "Viernes", hora: "8:30 - 9:00", tipo: "T/P" }, { dia: "Viernes", hora: "9:00 - 9:30", tipo: "T/P" }
+            { dia: "Martes", hora: "8:00 - 9:30", tipo: "T/P" },
+            { dia: "Viernes", hora: "8:00 - 9:30", tipo: "T/P" }
         ]
     },
     {
         id: "TF",
         horarios: [
-            { dia: "Martes", hora: "9:30 - 10:00", tipo: "T/P" }, { dia: "Martes", hora: "10:00 - 10:30", tipo: "T/P" }, { dia: "Martes", hora: "10:30 - 11:00", tipo: "T/P" },
-            { dia: "Viernes", hora: "9:30 - 10:00", tipo: "T/P" }, { dia: "Viernes", hora: "10:00 - 10:30", tipo: "T/P" }, { dia: "Viernes", hora: "10:30 - 11:00", tipo: "T/P" }
+            { dia: "Martes", hora: "9:30 - 11:00", tipo: "T/P" },
+            { dia: "Viernes", hora: "9:30 - 11:00", tipo: "T/P" }
         ]
     },
     {
         id: "TG",
         horarios: [
-            { dia: "Martes", hora: "15:00 - 15:30", tipo: "T/P" }, { dia: "Martes", hora: "15:30 - 16:00", tipo: "T/P" }, { dia: "Martes", hora: "16:00 - 16:30", tipo: "T/P" },
-            { dia: "Viernes", hora: "15:00 - 15:30", tipo: "T/P" }, { dia: "Viernes", hora: "15:30 - 16:00", tipo: "T/P" }, { dia: "Viernes", hora: "16:00 - 16:30", tipo: "T/P" }
+            { dia: "Martes", hora: "15:00 - 16:30", tipo: "T/P" },
+            { dia: "Viernes", hora: "15:00 - 16:30", tipo: "T/P" }
         ]
     },
     {
         id: "TH",
         horarios: [
-            { dia: "Martes", hora: "16:30 - 17:00", tipo: "T/P" }, { dia: "Martes", hora: "17:00 - 17:30", tipo: "T/P" }, { dia: "Martes", hora: "17:30 - 18:00", tipo: "T/P" },
-            { dia: "Viernes", hora: "16:30 - 17:00", tipo: "T/P" }, { dia: "Viernes", hora: "17:00 - 17:30", tipo: "T/P" }, { dia: "Viernes", hora: "17:30 - 18:00", tipo: "T/P" }
+            { dia: "Martes", hora: "16:30 - 18:00", tipo: "T/P" },
+            { dia: "Viernes", hora: "16:30 - 18:00", tipo: "T/P" }
         ]
     },
     {
         id: "TI",
         horarios: [
-            { dia: "Miércoles", hora: "18:00 - 18:30", tipo: "T/P" }, { dia: "Miércoles", hora: "18:30 - 19:00", tipo: "T/P" }, { dia: "Miércoles", hora: "19:00 - 19:30", tipo: "T/P" },
-            { dia: "Viernes", hora: "18:00 - 18:30", tipo: "T/P" }, { dia: "Viernes", hora: "18:30 - 19:00", tipo: "T/P" }, { dia: "Viernes", hora: "19:00 - 19:30", tipo: "T/P" }
+            { dia: "Miércoles", hora: "18:00 - 19:30", tipo: "T/P" },
+            { dia: "Viernes", hora: "18:00 - 19:30", tipo: "T/P" }
         ]
     },
     {
         id: "TJ",
         horarios: [
-            { dia: "Miércoles", hora: "19:30 - 20:00", tipo: "T/P" }, { dia: "Miércoles", hora: "20:00 - 20:30", tipo: "T/P" }, { dia: "Miércoles", hora: "20:30 - 21:00", tipo: "T/P" },
-            { dia: "Viernes", hora: "19:30 - 20:00", tipo: "T/P" }, { dia: "Viernes", hora: "20:00 - 20:30", tipo: "T/P" }, { dia: "Viernes", hora: "20:30 - 21:00", tipo: "T/P" }
+            { dia: "Miércoles", hora: "19:30 - 21:00", tipo: "T/P" },
+            { dia: "Viernes", hora: "19:30 - 21:00", tipo: "T/P" }
         ]
     },
     {
         id: "TK",
         horarios: [
-            { dia: "Martes", hora: "11:00 - 11:30", tipo: "T/P" }, { dia: "Martes", hora: "11:30 - 12:00", tipo: "T/P" }, { dia: "Martes", hora: "12:00 - 12:30", tipo: "T/P" },
-            { dia: "Viernes", hora: "11:00 - 11:30", tipo: "T/P" }, { dia: "Viernes", hora: "11:30 - 12:00", tipo: "T/P" }, { dia: "Viernes", hora: "12:00 - 12:30", tipo: "T/P" }
+            { dia: "Martes", hora: "11:00 - 12:30", tipo: "T/P" },
+            { dia: "Viernes", hora: "11:00 - 12:30", tipo: "T/P" }
         ]
     },
     {
         id: "TL",
         horarios: [
-            { dia: "Martes", hora: "12:30 - 13:00", tipo: "T/P" }, { dia: "Martes", hora: "13:00 - 13:30", tipo: "T/P" }, { dia: "Martes", hora: "13:30 - 14:00", tipo: "T/P" },
-            { dia: "Viernes", hora: "12:30 - 13:00", tipo: "T/P" }, { dia: "Viernes", hora: "13:00 - 13:30", tipo: "T/P" }, { dia: "Viernes", hora: "13:30 - 14:00", tipo: "T/P" }
+            { dia: "Martes", hora: "12:30 - 14:00", tipo: "T/P" },
+            { dia: "Viernes", hora: "12:30 - 14:00", tipo: "T/P" }
         ]
     },
     {
         id: "TM",
         horarios: [
-            { dia: "Lunes", hora: "14:00 - 14:30", tipo: "T/P" }, { dia: "Lunes", hora: "14:30 - 15:00", tipo: "T/P" }, { dia: "Lunes", hora: "15:00 - 15:30", tipo: "T/P" },
-            { dia: "Miércoles", hora: "14:00 - 14:30", tipo: "T/P" }, { dia: "Miércoles", hora: "14:30 - 15:00", tipo: "T/P" }, { dia: "Miércoles", hora: "15:00 - 15:30", tipo: "T/P" }
+            { dia: "Lunes", hora: "14:00 - 15:30", tipo: "T/P" },
+            { dia: "Miércoles", hora: "14:00 - 15:30", tipo: "T/P" }
         ]
     },
     {
         id: "TN",
         horarios: [
-            { dia: "Lunes", hora: "15:30 - 16:00", tipo: "T/P" }, { dia: "Lunes", hora: "16:00 - 16:30", tipo: "T/P" }, { dia: "Lunes", hora: "16:30 - 17:00", tipo: "T/P" },
-            { dia: "Miércoles", hora: "15:30 - 16:00", tipo: "T/P" }, { dia: "Miércoles", hora: "16:00 - 16:30", tipo: "T/P" }, { dia: "Miércoles", hora: "16:30 - 17:00", tipo: "T/P" }
+            { dia: "Lunes", hora: "15:30 - 17:00", tipo: "T/P" },
+            { dia: "Miércoles", hora: "15:30 - 17:00", tipo: "T/P" }
         ]
     },
     {
         id: "TO",
         horarios: [
-            { dia: "Lunes", hora: "17:00 - 17:30", tipo: "T/P" }, { dia: "Lunes", hora: "17:30 - 18:00", tipo: "T/P" }, { dia: "Lunes", hora: "18:00 - 18:30", tipo: "T/P" },
-            { dia: "Martes", hora: "17:00 - 17:30", tipo: "T/P" }, { dia: "Martes", hora: "17:30 - 18:00", tipo: "T/P" }, { dia: "Martes", hora: "18:00 - 18:30", tipo: "T/P" }
+            { dia: "Lunes", hora: "17:00 - 18:30", tipo: "T/P" },
+            { dia: "Martes", hora: "17:00 - 18:30", tipo: "T/P" }
         ]
     },
     {
         id: "TP",
         horarios: [
-            { dia: "Lunes", hora: "18:30 - 19:00", tipo: "T/P" }, { dia: "Lunes", hora: "19:00 - 19:30", tipo: "T/P" }, { dia: "Lunes", hora: "19:30 - 20:00", tipo: "T/P" },
-            { dia: "Martes", hora: "18:30 - 19:00", tipo: "T/P" }, { dia: "Martes", hora: "19:00 - 19:30", tipo: "T/P" }, { dia: "Martes", hora: "19:30 - 20:00", tipo: "T/P" }
+            { dia: "Lunes", hora: "18:30 - 20:00", tipo: "T/P" },
+            { dia: "Martes", hora: "18:30 - 20:00", tipo: "T/P" }
         ]
     }
 ];
@@ -236,19 +204,15 @@ const turnosFOD = [
     {
         id: "1",
         horarios: [
-            // Teoría (T) - turno mañana
-            { dia: "Viernes", hora: "8:30 - 9:00", tipo: "T" }, { dia: "Viernes", hora: "9:00 - 9:30", tipo: "T" }, { dia: "Viernes", hora: "9:30 - 10:00", tipo: "T" }, { dia: "Viernes", hora: "10:00 - 10:30", tipo: "T" },
-            // Práctica (P) - turno mañana
-            { dia: "Martes", hora: "11:00 - 11:30", tipo: "P" }, { dia: "Martes", hora: "11:30 - 12:00", tipo: "P" }, { dia: "Martes", hora: "12:00 - 12:30", tipo: "P" }, { dia: "Martes", hora: "12:30 - 13:00", tipo: "P" }
+            { dia: "Viernes", hora: "8:30 - 10:30", tipo: "T" },
+            { dia: "Martes", hora: "11:00 - 13:00", tipo: "P" }
         ]
     },
     {
         id: "2",
         horarios: [
-            // Teoría (T) - turno tarde
-            { dia: "Jueves", hora: "14:30 - 15:00", tipo: "T" }, { dia: "Jueves", hora: "15:00 - 15:30", tipo: "T" }, { dia: "Jueves", hora: "15:30 - 16:00", tipo: "T" }, { dia: "Jueves", hora: "16:00 - 16:30", tipo: "T" },
-            // Práctica (P) - turno tarde
-            { dia: "Martes", hora: "18:00 - 18:30", tipo: "P" }, { dia: "Martes", hora: "18:30 - 19:00", tipo: "P" }, { dia: "Martes", hora: "19:00 - 19:30", tipo: "P" }, { dia: "Martes", hora: "19:30 - 20:00", tipo: "P" }
+            { dia: "Jueves", hora: "14:30 - 16:30", tipo: "T" },
+            { dia: "Martes", hora: "18:00 - 20:00", tipo: "P" }
         ]
     }
 ];
@@ -258,19 +222,15 @@ const turnosSemiPython = [
     {
         id: "1",
         horarios: [
-            // Teoría (T) - turno mañana
-            { dia: "Martes", hora: "8:30 - 9:00", tipo: "T" }, { dia: "Martes", hora: "9:00 - 9:30", tipo: "T" }, { dia: "Martes", hora: "9:30 - 10:00", tipo: "T" }, { dia: "Martes", hora: "10:00 - 10:30", tipo: "T" },
-            // Práctica (P) - turno mañana
-            { dia: "Jueves", hora: "8:00 - 8:30", tipo: "P" }, { dia: "Jueves", hora: "8:30 - 9:00", tipo: "P" }, { dia: "Jueves", hora: "9:00 - 9:30", tipo: "P" }, { dia: "Jueves", hora: "9:30 - 10:00", tipo: "P" }
+            { dia: "Martes", hora: "8:30 - 10:30", tipo: "T" },
+            { dia: "Jueves", hora: "8:00 - 10:00", tipo: "P" }
         ]
     },
     {
         id: "2",
         horarios: [
-            // Teoría (T) - turno tarde
-            { dia: "Martes", hora: "15:00 - 15:30", tipo: "T" }, { dia: "Martes", hora: "15:30 - 16:00", tipo: "T" }, { dia: "Martes", hora: "16:00 - 16:30", tipo: "T" }, { dia: "Martes", hora: "16:30 - 17:00", tipo: "T" },
-            // Práctica (P) - turno tarde
-            { dia: "Jueves", hora: "16:00 - 16:30", tipo: "P" }, { dia: "Jueves", hora: "16:30 - 17:00", tipo: "P" }, { dia: "Jueves", hora: "17:00 - 17:30", tipo: "P" }, { dia: "Jueves", hora: "17:30 - 18:00", tipo: "P" }
+            { dia: "Martes", hora: "15:00 - 17:00", tipo: "T" },
+            { dia: "Jueves", hora: "16:00 - 18:00", tipo: "P" }
         ]
     }
 ];
@@ -280,15 +240,15 @@ const turnosAyEDTeoria = [
     {
         id: "TM", // turno mañana
         horarios: [
-            { dia: "Lunes", hora: "11:00 - 11:30", tipo: "T" }, { dia: "Lunes", hora: "11:30 - 12:00", tipo: "T" }, { dia: "Lunes", hora: "12:00 - 12:30", tipo: "T" }, { dia: "Lunes", hora: "12:30 - 13:00", tipo: "T" },
-            { dia: "Jueves", hora: "12:30 - 13:00", tipo: "T" }, { dia: "Jueves", hora: "13:00 - 13:30", tipo: "T" }, { dia: "Jueves", hora: "13:30 - 14:00", tipo: "T" }, { dia: "Jueves", hora: "14:00 - 14:30", tipo: "T" }
+            { dia: "Lunes", hora: "11:00 - 13:00", tipo: "T" },
+            { dia: "Jueves", hora: "12:30 - 14:30", tipo: "T" }
         ]
     },
     {
         id: "TT", // turno tarde
         horarios: [
-            { dia: "Martes", hora: "16:30 - 17:00", tipo: "T" }, { dia: "Martes", hora: "17:00 - 17:30", tipo: "T" }, { dia: "Martes", hora: "17:30 - 18:00", tipo: "T" }, { dia: "Martes", hora: "18:00 - 18:30", tipo: "T" },
-            { dia: "Miércoles", hora: "17:00 - 17:30", tipo: "T" }, { dia: "Miércoles", hora: "17:30 - 18:00", tipo: "T" }, { dia: "Miércoles", hora: "18:00 - 18:30", tipo: "T" }, { dia: "Miércoles", hora: "18:30 - 19:00", tipo: "T" }
+            { dia: "Martes", hora: "16:30 - 18:30", tipo: "T" },
+            { dia: "Miércoles", hora: "17:00 - 19:00", tipo: "T" }
         ]
     }
 ];
@@ -297,37 +257,37 @@ const turnosAyEDPractica = [
     {
         id: "P1",
         horarios: [
-            { dia: "Lunes", hora: "14:00 - 14:30", tipo: "P" }, { dia: "Lunes", hora: "14:30 - 15:00", tipo: "P" }, { dia: "Lunes", hora: "15:00 - 15:30", tipo: "P" }, { dia: "Lunes", hora: "15:30 - 16:00", tipo: "P" }
+            { dia: "Lunes", hora: "14:00 - 16:00", tipo: "P" }
         ]
     },
     {
         id: "P2",
         horarios: [
-            { dia: "Martes", hora: "9:00 - 9:30", tipo: "P" }, { dia: "Martes", hora: "9:30 - 10:00", tipo: "P" }, { dia: "Martes", hora: "10:00 - 10:30", tipo: "P" }, { dia: "Martes", hora: "10:30 - 11:00", tipo: "P" }
+            { dia: "Martes", hora: "9:00 - 11:00", tipo: "P" }
         ]
     },
     {
         id: "P3",
         horarios: [
-            { dia: "Martes", hora: "14:00 - 14:30", tipo: "P" }, { dia: "Martes", hora: "14:30 - 15:00", tipo: "P" }, { dia: "Martes", hora: "15:00 - 15:30", tipo: "P" }, { dia: "Martes", hora: "15:30 - 16:00", tipo: "P" }
+            { dia: "Martes", hora: "14:00 - 16:00", tipo: "P" }
         ]
     },
     {
         id: "P4",
         horarios: [
-            { dia: "Jueves", hora: "10:00 - 10:30", tipo: "P" }, { dia: "Jueves", hora: "10:30 - 11:00", tipo: "P" }, { dia: "Jueves", hora: "11:00 - 11:30", tipo: "P" }, { dia: "Jueves", hora: "11:30 - 12:00", tipo: "P" }
+            { dia: "Jueves", hora: "10:00 - 12:00", tipo: "P" }
         ]
     },
     {
         id: "P5",
         horarios: [
-            { dia: "Jueves", hora: "18:00 - 18:30", tipo: "P" }, { dia: "Jueves", hora: "18:30 - 19:00", tipo: "P" }, { dia: "Jueves", hora: "19:00 - 19:30", tipo: "P" }, { dia: "Jueves", hora: "19:30 - 20:00", tipo: "P" }
+            { dia: "Jueves", hora: "18:00 - 20:00", tipo: "P" }
         ]
     },
     {
         id: "P6",
         horarios: [
-            { dia: "Viernes", hora: "14:00 - 14:30", tipo: "P" }, { dia: "Viernes", hora: "14:30 - 15:00", tipo: "P" }, { dia: "Viernes", hora: "15:00 - 15:30", tipo: "P" }, { dia: "Viernes", hora: "15:30 - 16:00", tipo: "P" }
+            { dia: "Viernes", hora: "14:00 - 16:00", tipo: "P" }
         ]
     }
 ];
@@ -346,53 +306,249 @@ const todasLasHoras = [
 
 const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
 
-// Estado de selección
-let materiasSeleccionadas = {
-    ARQUI: false,
-    MAT2: false,
-    TALLER: false,
-    FOD: false,
-    "Semi-Python": false
-};
-let turnosSeleccionados = {
-    ARQUI: "",
-    MAT2: "",
-    TALLER: "",
-    FOD: "",
-    "Semi-Python": "",
-    "AyED": {
-        teoria: "",
-        practica: ""
+const compressedTurnosCache = {};
+let materiasSeleccionadas = {};
+let turnosSeleccionados = {};
+
+// --- Compactar globales `turnos*` transformando bloques en rangos
+function compressTurnoHorariosArray(horarios) {
+    // Construye mapa por dia+tipo -> array de índices de `todasLasHoras`
+    const map = new Map();
+
+    function addSlot(dia, tipo, index) {
+        const key = `${dia}||${tipo}`;
+        if (!map.has(key)) map.set(key, new Set());
+        map.get(key).add(index);
     }
-};
+
+    horarios.forEach(h => {
+        // Si es rango, expandirlo a índices
+        if (!todasLasHoras.includes(h.hora)) {
+            const parts = h.hora.split('-').map(s => s.trim());
+            if (parts.length === 2) {
+                const start = parseTimeToMinutes(parts[0]);
+                const end = parseTimeToMinutes(parts[1]);
+                todasLasHoras.forEach((slot, idx) => {
+                    const p = parseSlot(slot);
+                    if (p.start >= start && p.end <= end) addSlot(h.dia, h.tipo, idx);
+                });
+                return;
+            }
+        }
+        // Si es bloque conocido
+        const idx = todasLasHoras.indexOf(h.hora);
+        if (idx !== -1) addSlot(h.dia, h.tipo, idx);
+    });
+
+    // Convertir sets de índices a rangos
+    const result = [];
+    for (const [key, setIdx] of map.entries()) {
+        const [dia, tipo] = key.split('||');
+        const indices = Array.from(setIdx).sort((a, b) => a - b);
+        let i = 0;
+        while (i < indices.length) {
+            let start = indices[i];
+            let end = start;
+            while (i + 1 < indices.length && indices[i + 1] === end + 1) {
+                end = indices[++i];
+            }
+            const startStr = todasLasHoras[start].split('-')[0].trim();
+            const endStr = todasLasHoras[end].split('-')[1].trim();
+            result.push({ dia, hora: `${startStr} - ${endStr}`, tipo });
+            i++;
+        }
+    }
+    return result;
+}
+
+function compressTurnosGlobales() {
+    // Construir cache a partir del listado `materias` para evitar depender de window
+    try {
+        materias.forEach(m => {
+            const materiaName = getMateriaBaseName(m.nombre);
+            const cacheKey = materiaName.toLowerCase();
+            const norm = cacheKey;
+
+            // Buscar en propiedades globales `window` si existe
+            if (typeof window !== 'undefined') {
+                Object.keys(window).forEach(key => {
+                    if (!key.toLowerCase().startsWith('turnos')) return;
+                    const keyTail = key.substring(6).toLowerCase(); // after 'turnos'
+                    if (!keyTail.includes(norm)) return;
+                    const val = window[key];
+                    if (!val) return;
+                    if (Array.isArray(val)) {
+                        const compressed = val.map(turno => ({ ...turno, horarios: compressTurnoHorariosArray(turno.horarios || []) }));
+                        compressedTurnosCache[cacheKey] = compressed;
+                        compressedTurnosCache[materiaName] = compressed;
+                    } else if (typeof val === 'object') {
+                        const obj = {};
+                        if (Array.isArray(val.teoria)) obj.teoria = val.teoria.map(t => ({ ...t, horarios: compressTurnoHorariosArray(t.horarios || []) }));
+                        if (Array.isArray(val.practica)) obj.practica = val.practica.map(t => ({ ...t, horarios: compressTurnoHorariosArray(t.horarios || []) }));
+                        if (Object.keys(obj).length) {
+                            compressedTurnosCache[cacheKey] = obj;
+                            compressedTurnosCache[materiaName] = obj;
+                        }
+                    }
+                });
+            }
+
+            // Fallback: intentar variaciones por evaluación
+            const rawMateria = materiaName;
+            const normalized = rawMateria.toLowerCase();
+            const candidates = [rawMateria, normalized, rawMateria.toUpperCase(), rawMateria.charAt(0).toUpperCase() + normalized.slice(1)];
+            candidates.forEach(suffix => {
+                try {
+                    const maybe = eval('turnos' + suffix);
+                    if (maybe !== undefined) {
+                        if (Array.isArray(maybe)) {
+                            const compressed = maybe.map(turno => ({ ...turno, horarios: compressTurnoHorariosArray(turno.horarios || []) }));
+                            compressedTurnosCache[cacheKey] = compressed;
+                            compressedTurnosCache[rawMateria] = compressed;
+                        }
+                    }
+                } catch (e) {}
+                try {
+                    const teoria = eval('turnos' + suffix + 'Teoria');
+                    const practica = eval('turnos' + suffix + 'Practica');
+                    if (Array.isArray(teoria) || Array.isArray(practica)) {
+                        const compressedObj = {
+                            teoria: Array.isArray(teoria) ? teoria.map(t => ({ ...t, horarios: compressTurnoHorariosArray(t.horarios || []) })) : [],
+                            practica: Array.isArray(practica) ? practica.map(t => ({ ...t, horarios: compressTurnoHorariosArray(t.horarios || []) })) : []
+                        };
+                        compressedTurnosCache[cacheKey] = compressedObj;
+                        compressedTurnosCache[rawMateria] = compressedObj;
+                    }
+                } catch (e) {}
+            });
+        });
+    } catch (e) {
+        // ignorar errores de entorno
+    }
+}
+
+compressTurnosGlobales();
+
+materias.forEach(m => {
+    materiasSeleccionadas[m.nombre] = false;
+    const lookup = lookupTurnosByName(m.nombre);
+    turnosSeleccionados[m.nombre] = isTeoriaPracticaTurnos(lookup) ? { teoria: '', practica: '' } : '';
+});
+
+// Helpers globales: parseo y normalización de rangos a bloques de 30min
+function parseTimeToMinutes(t) {
+    const [h, m] = t.split(':').map(s => parseInt(s, 10));
+    return h * 60 + m;
+}
+
+function parseSlot(slot) {
+    const parts = slot.split('-').map(s => s.trim());
+    return {
+        start: parseTimeToMinutes(parts[0]),
+        end: parseTimeToMinutes(parts[1])
+    };
+}
+
+function getMateriaBaseName(name) {
+    const withoutYear = name.replace(/\s*-\s*\d{4}$/, '');
+    return withoutYear.replace(/[^a-zA-Z0-9]/g, '');
+}
+
+function isTeoriaPracticaTurnos(turnos) {
+    return turnos && typeof turnos === 'object' && !Array.isArray(turnos) && ('teoria' in turnos || 'practica' in turnos);
+}
+
+function expandHorarioEntry(entry) {
+    if (todasLasHoras.includes(entry.hora)) return [entry];
+    const parts = entry.hora.split('-').map(s => s.trim());
+    if (parts.length !== 2) return [entry];
+    const start = parseTimeToMinutes(parts[0]);
+    const end = parseTimeToMinutes(parts[1]);
+    return todasLasHoras.map(slot => ({ slot, parsed: parseSlot(slot) }))
+        .filter(s => s.parsed.start >= start && s.parsed.end <= end)
+        .map(s => ({ dia: entry.dia, hora: s.slot, tipo: entry.tipo }));
+}
+
+function normalizeTurnoArray(arr) {
+    if (!Array.isArray(arr)) return arr;
+    return arr.map(turno => {
+        const horarios = (turno.horarios || []).flatMap(h => expandHorarioEntry(h));
+        return { ...turno, horarios };
+    });
+}
+
+function lookupTurnosByName(name) {
+    const normalized = getMateriaBaseName(name);
+    const normalizedLower = normalized.toLowerCase();
+    // Si existe cache, devolverlo
+    if (normalizedLower in compressedTurnosCache) return compressedTurnosCache[normalizedLower];
+    if (normalized in compressedTurnosCache) return compressedTurnosCache[normalized];
+
+    if (typeof window !== 'undefined') {
+        for (const key of Object.keys(window)) {
+            if (!key.toLowerCase().startsWith('turnos')) continue;
+            const tail = key.substring(6).toLowerCase();
+            if (tail.includes(normLower)) {
+                return window[key];
+            }
+        }
+    }
+
+    const candidates = [normalized, normalized.toLowerCase(), normalized.charAt(0).toUpperCase() + normalized.slice(1).toLowerCase()];
+    for (const suffix of candidates) {
+        try {
+            const maybe = eval('turnos' + suffix);
+            if (maybe !== undefined) return maybe;
+        } catch (e) {}
+        try {
+            const teoria = eval('turnos' + suffix + 'Teoria');
+            const practica = eval('turnos' + suffix + 'Practica');
+            if (theoria !== undefined || practica !== undefined) return { teoria: teoria || [], practica: practica || [] };
+        } catch (e) {}
+    }
+
+    return [];
+}
+
+// Comprueba si una entrada horario (posible rango) contiene el bloque `slotHora` (p.ej. "8:00 - 8:30")
+function horarioMatchesSlot(entry, dia, slotHora) {
+    if (!entry || entry.dia !== dia) return false;
+    if (entry.hora === slotHora) return true;
+    // si entry.hora es rango, comprobar inclusión
+    if (!todasLasHoras.includes(entry.hora)) {
+        const slotParsed = parseSlot(slotHora);
+        const rangeParts = entry.hora.split('-').map(s => s.trim());
+        if (rangeParts.length !== 2) return false;
+        const start = parseTimeToMinutes(rangeParts[0]);
+        const end = parseTimeToMinutes(rangeParts[1]);
+        return slotParsed.start >= start && slotParsed.end <= end;
+    }
+    return false;
+}
 
 // Función para saber si hay clase de una materia en ese día/hora
 function hayMateria(materia, dia, hora) {
-    if (materia === "AyED") {
-        if (!materiasSeleccionadas.AyED) return null;
-        const tId = turnosSeleccionados.AyED.teoria;
-        const pId = turnosSeleccionados.AyED.practica;
-        if (tId) {
-            const turnoT = turnosAyEDTeoria.find(t => t.id === tId);
-            if (turnoT && turnoT.horarios.some(h => h.dia === dia && h.hora === hora)) return "T";
+    if (!materiasSeleccionadas[materia]) return null;
+    const lookup = lookupTurnosByName(materia);
+    if (isTeoriaPracticaTurnos(lookup)) {
+        const selected = turnosSeleccionados[materia] || { teoria: '', practica: '' };
+        if (selected.teoria) {
+            const turnoT = (lookup.teoria || []).find(t => t.id === selected.teoria);
+            if (turnoT && turnoT.horarios.some(h => horarioMatchesSlot(h, dia, hora))) return 'T';
         }
-        if (pId) {
-            const turnoP = turnosAyEDPractica.find(t => t.id === pId);
-            if (turnoP && turnoP.horarios.some(h => h.dia === dia && h.hora === hora)) return "P";
+        if (selected.practica) {
+            const turnoP = (lookup.practica || []).find(t => t.id === selected.practica);
+            if (turnoP && turnoP.horarios.some(h => horarioMatchesSlot(h, dia, hora))) return 'P';
         }
         return null;
     }
 
-    let turnosArr = materia === "ARQUI" ? turnosArqui :
-                    materia === "MAT2" ? turnosMat2 :
-                    materia === "FOD" ? turnosFOD :
-                    materia === "Semi-Python" ? turnosSemiPython :
-                    turnosTaller;
-    let turnoId = turnosSeleccionados[materia];
-    if (!materiasSeleccionadas[materia] || !turnoId) return null;
+    const turnosArr = lookup || [];
+    const turnoId = turnosSeleccionados[materia];
+    if (!turnoId) return null;
     const turno = turnosArr.find(t => t.id === turnoId);
     if (!turno) return null;
-    const bloque = turno.horarios.find(h => h.dia === dia && h.hora === hora);
+    const bloque = turno.horarios.find(h => horarioMatchesSlot(h, dia, hora));
     return bloque ? bloque.tipo : null;
 }
 
@@ -402,32 +558,48 @@ function obtenerHorasVisibles() {
     let bloques = [];
     materias.forEach(m => {
         if (!materiasSeleccionadas[m.nombre]) return;
-        if (m.nombre === "AyED") {
-            if (!materiasSeleccionadas.AyED) return;
-            const tId = turnosSeleccionados.AyED.teoria;
-            const pId = turnosSeleccionados.AyED.practica;
-            if (tId) {
-                const turnoT = turnosAyEDTeoria.find(t => t.id === tId);
-                if (turnoT) turnoT.horarios.forEach(h => { if (!bloques.includes(h.hora)) bloques.push(h.hora); });
+        // usar lookup dinámico y normalizado
+        const lookup = lookupTurnosByName(m.nombre);
+        if (isTeoriaPracticaTurnos(lookup)) {
+            const selected = turnosSeleccionados[m.nombre] || { teoria: '', practica: '' };
+            if (selected.teoria) {
+                const turnoT = (lookup.teoria || []).find(t => t.id === selected.teoria);
+                if (turnoT) {
+                    turnoT.horarios.forEach(h => {
+                        if (todasLasHoras.includes(h.hora)) {
+                            if (!bloques.includes(h.hora)) bloques.push(h.hora);
+                        } else {
+                            expandHorarioEntry(h).forEach(e => { if (!bloques.includes(e.hora)) bloques.push(e.hora); });
+                        }
+                    });
+                }
             }
-            if (pId) {
-                const turnoP = turnosAyEDPractica.find(t => t.id === pId);
-                if (turnoP) turnoP.horarios.forEach(h => { if (!bloques.includes(h.hora)) bloques.push(h.hora); });
+            if (selected.practica) {
+                const turnoP = (lookup.practica || []).find(t => t.id === selected.practica);
+                if (turnoP) {
+                    turnoP.horarios.forEach(h => {
+                        if (todasLasHoras.includes(h.hora)) {
+                            if (!bloques.includes(h.hora)) bloques.push(h.hora);
+                        } else {
+                            expandHorarioEntry(h).forEach(e => { if (!bloques.includes(e.hora)) bloques.push(e.hora); });
+                        }
+                    });
+                }
             }
             return;
         }
 
-        let turnosArr = m.nombre === "ARQUI" ? turnosArqui :
-                        m.nombre === "MAT2" ? turnosMat2 :
-                        m.nombre === "FOD" ? turnosFOD :
-                        m.nombre === "Semi-Python" ? turnosSemiPython :
-                        turnosTaller;
-        let turnoId = turnosSeleccionados[m.nombre];
+        const turnosArr = lookup || [];
+        const turnoId = turnosSeleccionados[m.nombre];
         if (!turnoId) return;
         const turno = turnosArr.find(t => t.id === turnoId);
         if (!turno) return;
         turno.horarios.forEach(h => {
-            if (!bloques.includes(h.hora)) bloques.push(h.hora);
+            if (todasLasHoras.includes(h.hora)) {
+                if (!bloques.includes(h.hora)) bloques.push(h.hora);
+            } else {
+                expandHorarioEntry(h).forEach(e => { if (!bloques.includes(e.hora)) bloques.push(e.hora); });
+            }
         });
     });
     if (bloques.length === 0) return todasLasHoras; // Si nada seleccionado, muestra todo
@@ -449,31 +621,78 @@ function generarTabla() {
     dias.forEach(dia => html += `<th>${dia}</th>`);
     html += '</tr>';
 
+    // Construir cuadrícula: grid[dia][hora] = array de {nombre,color,tipo}
+    const grid = {};
+    dias.forEach(d => grid[d] = {});
     horas.forEach(hora => {
-        html += `<tr><td>${hora}</td>`;
         dias.forEach(dia => {
-            let presentes = [];
+            const presentes = [];
             materias.forEach(m => {
-                const tipo = hayMateria(m.nombre, dia, hora);
-                if (tipo) presentes.push({ nombre: m.nombre, color: m.color, tipo });
-            });
+                if (!materiasSeleccionadas[m.nombre]) return;
 
-            let cell = "";
+                const lookup = lookupTurnosByName(m.nombre);
+                if (isTeoriaPracticaTurnos(lookup)) {
+                    const selected = turnosSeleccionados[m.nombre] || { teoria: '', practica: '' };
+                    if (selected.teoria) {
+                        const turnoT = (lookup.teoria || []).find(t => t.id === selected.teoria);
+                        if (turnoT && turnoT.horarios.some(h => horarioMatchesSlot(h, dia, hora))) presentes.push({ nombre: m.nombre, color: m.color, tipo: 'T' });
+                    }
+                    if (selected.practica) {
+                        const turnoP = (lookup.practica || []).find(t => t.id === selected.practica);
+                        if (turnoP && turnoP.horarios.some(h => horarioMatchesSlot(h, dia, hora))) presentes.push({ nombre: m.nombre, color: m.color, tipo: 'P' });
+                    }
+                    return;
+                }
+
+                const turnosArr = lookup || [];
+                const turnoId = turnosSeleccionados[m.nombre];
+                if (!turnoId) return;
+                const turno = turnosArr.find(t => t.id === turnoId);
+                if (!turno) return;
+                if (turno.horarios.some(h => horarioMatchesSlot(h, dia, hora))) {
+                    // Puede haber solo un tipo por entrada, pero mantener tipo original
+                    // Encontrar la entrada que cubre (prefer first match)
+                    const entry = turno.horarios.find(h => horarioMatchesSlot(h, dia, hora));
+                    presentes.push({ nombre: m.nombre, color: m.color, tipo: entry ? entry.tipo : '' });
+                }
+            });
+            grid[dia][hora] = presentes;
+        });
+    });
+
+    // helper: comparar arrays de presentes (orden insensible)
+    function samePresentSet(a, b) {
+        if (!a && !b) return true;
+        if (!a || !b) return false;
+        if (a.length !== b.length) return false;
+        const ka = a.map(x => `${x.nombre}||${x.tipo}`).sort();
+        const kb = b.map(x => `${x.nombre}||${x.tipo}`).sort();
+        for (let i = 0; i < ka.length; i++) if (ka[i] !== kb[i]) return false;
+        return true;
+    }
+
+    // No fusionar filas: render por cada bloque de 30 minutos para mostrar colisiones por slot
+    for (let i = 0; i < horas.length; i++) {
+        const hora = horas[i];
+        html += `<tr><td>${hora}</td>`;
+
+        for (const dia of dias) {
+            const presentes = grid[dia][hora] || [];
+            let cell = '';
             if (presentes.length === 0) {
-                cell = "<td></td>";
+                cell = '<td></td>';
             } else if (presentes.length === 1) {
-                let mat = presentes[0];
-                cell = `<td class="${mat.color}">${mat.nombre} (${mat.tipo})</td>`;
+                const p = presentes[0];
+                cell = `<td class="${p.color}">${p.nombre} (${p.tipo})</td>`;
             } else {
-                // Superposición: rojo
-                cell = `<td class="superpuesto">${presentes.map(mat =>
-                    `<span class="${mat.color}">${mat.nombre} (${mat.tipo})</span>`
-                ).join('<br>')}</td>`;
+                const content = presentes.map(p => `<span class="${p.color}">${p.nombre} (${p.tipo})</span>`).join('<br>');
+                cell = `<td class="superpuesto">${content}</td>`;
             }
             html += cell;
-        });
-        html += "</tr>";
-    });
+        }
+
+        html += '</tr>';
+    }
 
     html += "</table>";
     document.getElementById("tabla-horario").innerHTML = html;
@@ -481,156 +700,93 @@ function generarTabla() {
 
 // Eventos de la botonera HTML
 document.addEventListener("DOMContentLoaded", function () {
-    // Botones de materia
-    document.getElementById("btn-arqui").addEventListener("click", function () {
-        materiasSeleccionadas.ARQUI = !materiasSeleccionadas.ARQUI;
-        this.classList.toggle("active", materiasSeleccionadas.ARQUI);
-        document.getElementById("turnoSelect-arqui").style.display = materiasSeleccionadas.ARQUI ? "inline" : "none";
-        generarTabla();
-    });
-    document.getElementById("btn-mat2").addEventListener("click", function () {
-        materiasSeleccionadas.MAT2 = !materiasSeleccionadas.MAT2;
-        this.classList.toggle("active", materiasSeleccionadas.MAT2);
-        document.getElementById("turnoSelect-mat2").style.display = materiasSeleccionadas.MAT2 ? "inline" : "none";
-        generarTabla();
-    });
-    document.getElementById("btn-taller").addEventListener("click", function () {
-        materiasSeleccionadas.TALLER = !materiasSeleccionadas.TALLER;
-        this.classList.toggle("active", materiasSeleccionadas.TALLER);
-        document.getElementById("turnoSelect-taller").style.display = materiasSeleccionadas.TALLER ? "inline" : "none";
-        generarTabla();
-    });
-    document.getElementById("btn-fod").addEventListener("click", function () {
-        materiasSeleccionadas.FOD = !materiasSeleccionadas.FOD;
-        this.classList.toggle("active", materiasSeleccionadas.FOD);
-        document.getElementById("turnoSelect-fod").style.display = materiasSeleccionadas.FOD ? "inline" : "none";
-        generarTabla();
-    });
-    document.getElementById("btn-semi").addEventListener("click", function () {
-        materiasSeleccionadas["Semi-Python"] = !materiasSeleccionadas["Semi-Python"];
-        this.classList.toggle("active", materiasSeleccionadas["Semi-Python"]);
-        document.getElementById("turnoSelect-semi").style.display = materiasSeleccionadas["Semi-Python"] ? "inline" : "none";
-        generarTabla();
-    });
-    document.getElementById("btn-ayed").addEventListener("click", function () {
-        materiasSeleccionadas.AyED = !materiasSeleccionadas.AyED;
-        this.classList.toggle("active", materiasSeleccionadas.AyED);
-        let visible = materiasSeleccionadas.AyED ? "inline" : "none";
-        document.getElementById("turnoSelect-ayed-teoria").style.display = visible;
-        document.getElementById("turnoSelect-ayed-practica").style.display = visible;
-        generarTabla();
-    });
-
-    // Select de turnos por materia
-    document.getElementById("turnoSelect-arqui").addEventListener("change", function () {
-        turnosSeleccionados.ARQUI = this.value;
-        generarTabla();
-    });
-    document.getElementById("turnoSelect-mat2").addEventListener("change", function () {
-        turnosSeleccionados.MAT2 = this.value;
-        generarTabla();
-    });
-    document.getElementById("turnoSelect-taller").addEventListener("change", function () {
-        turnosSeleccionados.TALLER = this.value;
-        generarTabla();
-    });
-    document.getElementById("turnoSelect-fod").addEventListener("change", function () {
-        turnosSeleccionados.FOD = this.value;
-        generarTabla();
-    });
-    document.getElementById("turnoSelect-semi").addEventListener("change", function () {
-        turnosSeleccionados["Semi-Python"] = this.value;
-        generarTabla();
-    });
-    document.getElementById("turnoSelect-ayed-teoria").addEventListener("change", function () {
-        turnosSeleccionados.AyED.teoria = this.value;
-        generarTabla();
-    });
-    document.getElementById("turnoSelect-ayed-practica").addEventListener("change", function () {
-        turnosSeleccionados.AyED.practica = this.value;
-        generarTabla();
-    });
-
-    // Inicializa selects
-    inicializarSelects();
+    // Generar la botonera y binds dinámicos
+    construirBotoneraDinamica();
     generarTabla();
 });
 
 // Inicializa los selects de turnos por materia
-function inicializarSelects() {
-    // ARQUI
-    let selectArqui = document.getElementById("turnoSelect-arqui");
-    selectArqui.innerHTML = '<option value="">Selecciona turno</option>';
-    turnosArqui.forEach(t => {
-        const opt = document.createElement("option");
-        opt.value = t.id;
-        opt.textContent = t.id;
-        selectArqui.appendChild(opt);
-    });
-    selectArqui.style.display = "none";
+// Construye la botonera de forma dinámica según la configuración `materias`
+function construirBotoneraDinamica() {
+    const cont = document.getElementById('botonera');
+    cont.innerHTML = '';
 
-    // MAT2
-    let selectMat2 = document.getElementById("turnoSelect-mat2");
-    selectMat2.innerHTML = '<option value="">Selecciona turno</option>';
-    turnosMat2.forEach(t => {
-        const opt = document.createElement("option");
-        opt.value = t.id;
-        opt.textContent = t.id;
-        selectMat2.appendChild(opt);
-    });
-    selectMat2.style.display = "none";
+    function cleanId(name) {
+        return name.replace(/[^a-zA-Z0-9]/g, '_');
+    }
 
-    // TALLER
-    let selectTaller = document.getElementById("turnoSelect-taller");
-    selectTaller.innerHTML = '<option value="">Selecciona turno</option>';
-    turnosTaller.forEach(t => {
-        const opt = document.createElement("option");
-        opt.value = t.id;
-        opt.textContent = t.id;
-        selectTaller.appendChild(opt);
-    });
-    selectTaller.style.display = "none";
+    // lookupTurnosByName y helpers están en ámbito global arriba
 
-    // FOD
-    let selectFod = document.getElementById("turnoSelect-fod");
-    selectFod.innerHTML = '<option value="">Selecciona turno</option>';
-    turnosFOD.forEach(t => {
-        const opt = document.createElement("option");
-        opt.value = t.id;
-        opt.textContent = t.id;
-        selectFod.appendChild(opt);
-    });
-    selectFod.style.display = "none";
+    materias.forEach(m => {
+        const box = document.createElement('div');
+        box.className = 'boton-materia';
 
-    // Semi-Python
-    let selectSemi = document.getElementById("turnoSelect-semi");
-    selectSemi.innerHTML = '<option value="">Selecciona turno</option>';
-    turnosSemiPython.forEach(t => {
-        const opt = document.createElement("option");
-        opt.value = t.id;
-        opt.textContent = t.id;
-        selectSemi.appendChild(opt);
-    });
-    selectSemi.style.display = "none";
+        const btn = document.createElement('button');
+        btn.className = 'btn-grande';
+        btn.textContent = m.nombre;
+        btn.dataset.materia = m.nombre;
 
-    // AyED
-    let selectAyEDTeoria = document.getElementById("turnoSelect-ayed-teoria");
-    selectAyEDTeoria.innerHTML = '<option value="">Selecciona teoría</option>';
-    turnosAyEDTeoria.forEach(t => {
-        const opt = document.createElement("option");
-        opt.value = t.id;
-        opt.textContent = t.id;
-        selectAyEDTeoria.appendChild(opt);
-    });
-    selectAyEDTeoria.style.display = "none";
+        const key = cleanId(m.nombre);
 
-    let selectAyEDPractica = document.getElementById("turnoSelect-ayed-practica");
-    selectAyEDPractica.innerHTML = '<option value="">Selecciona práctica</option>';
-    turnosAyEDPractica.forEach(t => {
-        const opt = document.createElement("option");
-        opt.value = t.id;
-        opt.textContent = t.id;
-        selectAyEDPractica.appendChild(opt);
+        // selects container
+        const selects = document.createElement('div');
+        selects.style.marginTop = '8px';
+
+        // Create selects depending on materia
+        const turnos = lookupTurnosByName(m.nombre);
+        if (isTeoriaPracticaTurnos(turnos)) {
+            const selT = document.createElement('select');
+            selT.id = `turnoSelect-${key}-teoria`;
+            selT.style.display = 'none';
+            selT.innerHTML = '<option value="">Selecciona teoría</option>';
+            (turnos.teoria || []).forEach(t => {
+                const opt = document.createElement('option'); opt.value = t.id; opt.textContent = t.id; selT.appendChild(opt);
+            });
+
+            const selP = document.createElement('select');
+            selP.id = `turnoSelect-${key}-practica`;
+            selP.style.display = 'none';
+            selP.innerHTML = '<option value="">Selecciona práctica</option>';
+            (turnos.practica || []).forEach(t => {
+                const opt = document.createElement('option'); opt.value = t.id; opt.textContent = t.id; selP.appendChild(opt);
+            });
+
+            selT.addEventListener('change', () => { turnosSeleccionados[m.nombre].teoria = selT.value; generarTabla(); });
+            selP.addEventListener('change', () => { turnosSeleccionados[m.nombre].practica = selP.value; generarTabla(); });
+
+            selects.appendChild(selT);
+            selects.appendChild(selP);
+        } else {
+            const sel = document.createElement('select');
+            sel.id = `turnoSelect-${key}`;
+            sel.style.display = 'none';
+            sel.innerHTML = '<option value="">Selecciona turno</option>';
+            (turnos || []).forEach(t => {
+                const opt = document.createElement('option'); opt.value = t.id; opt.textContent = t.id; sel.appendChild(opt);
+            });
+            sel.addEventListener('change', () => { turnosSeleccionados[m.nombre] = sel.value; generarTabla(); });
+            selects.appendChild(sel);
+        }
+
+        // Button toggle
+        btn.addEventListener('click', function () {
+            materiasSeleccionadas[m.nombre] = !materiasSeleccionadas[m.nombre];
+            this.classList.toggle('active', materiasSeleccionadas[m.nombre]);
+            // show/hide selects
+            if (isTeoriaPracticaTurnos(lookupTurnosByName(m.nombre))) {
+                const t = document.getElementById(`turnoSelect-${key}-teoria`);
+                const p = document.getElementById(`turnoSelect-${key}-practica`);
+                if (t) t.style.display = materiasSeleccionadas[m.nombre] ? 'inline' : 'none';
+                if (p) p.style.display = materiasSeleccionadas[m.nombre] ? 'inline' : 'none';
+            } else {
+                const s = document.getElementById(`turnoSelect-${key}`);
+                if (s) s.style.display = materiasSeleccionadas[m.nombre] ? 'inline' : 'none';
+            }
+            generarTabla();
+        });
+
+        box.appendChild(btn);
+        box.appendChild(selects);
+        cont.appendChild(box);
     });
-    selectAyEDPractica.style.display = "none";
 }
