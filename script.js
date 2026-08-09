@@ -3,10 +3,12 @@ const materias = [
     { nombre: "ARQUI - 2025", color: "cadp" },
     { nombre: "MAT2 - 2025", color: "mat1" },
     { nombre: "TALLER - 2025", color: "taller" },
+    { nombre: "TALLER - 2026", color: "taller" },
     { nombre: "FOD - 2026", color: "fod" },
     { nombre: "Semi-Python - 2026", color: "semi" },
     { nombre: "AyED - 2026", color: "ayed" },
-    { nombre: "Obj 1 - 2026", color: "obj1" }
+    { nombre: "Obj 1 - 2026", color: "obj1" },
+    { nombre: "INGLES - 2026", color: "ingles" }
 ];
 
 const materiaGroups = [
@@ -16,7 +18,7 @@ const materiaGroups = [
     },
     {
         titulo: "Segundo Año",
-        claves: ["FOD", "SemiPython", "AyED", "Obj1"]
+        claves: ["FOD", "SemiPython", "AyED", "Obj1", "INGLES"]
     },
     {
         titulo: "Tercer Año",
@@ -184,33 +186,64 @@ const turnosTaller = [
             { dia: "Martes", hora: "12:30 - 14:00", tipo: "T/P" },
             { dia: "Viernes", hora: "12:30 - 14:00", tipo: "T/P" }
         ]
-    },
+    }
+];
+
+const turnosTaller2026 = [
     {
-        id: "TM",
+        id: "TA",
         horarios: [
-            { dia: "Lunes", hora: "14:00 - 15:30", tipo: "T/P" },
-            { dia: "Miércoles", hora: "14:00 - 15:30", tipo: "T/P" }
+            { dia: "Lunes", hora: "8:00 - 10:00", tipo: "T/P" },
+            { dia: "Jueves", hora: "8:00 - 10:00", tipo: "T/P" }
         ]
     },
     {
-        id: "TN",
+        id: "TB",
         horarios: [
-            { dia: "Lunes", hora: "15:30 - 17:00", tipo: "T/P" },
-            { dia: "Miércoles", hora: "15:30 - 17:00", tipo: "T/P" }
+            { dia: "Lunes", hora: "13:00 - 15:00", tipo: "T/P" },
+            { dia: "Miércoles", hora: "13:00 - 15:00", tipo: "T/P" }
         ]
     },
     {
-        id: "TO",
+        id: "TC",
         horarios: [
-            { dia: "Lunes", hora: "17:00 - 18:30", tipo: "T/P" },
-            { dia: "Martes", hora: "17:00 - 18:30", tipo: "T/P" }
+            { dia: "Lunes", hora: "15:00 - 17:00", tipo: "T/P" },
+            { dia: "Miércoles", hora: "15:00 - 17:00", tipo: "T/P" }
         ]
     },
     {
-        id: "TP",
+        id: "TD",
         horarios: [
-            { dia: "Lunes", hora: "18:30 - 20:00", tipo: "T/P" },
-            { dia: "Martes", hora: "18:30 - 20:00", tipo: "T/P" }
+            { dia: "Lunes", hora: "18:00 - 20:00", tipo: "T/P" },
+            { dia: "Miércoles", hora: "18:00 - 20:00", tipo: "T/P" }
+        ]
+    },
+    {
+        id: "TE",
+        horarios: [
+            { dia: "Martes", hora: "8:00 - 10:00", tipo: "T/P" },
+            { dia: "Viernes", hora: "8:00 - 10:00", tipo: "T/P" }
+        ]
+    },
+    {
+        id: "TF",
+        horarios: [
+            { dia: "Martes", hora: "11:00 - 13:00", tipo: "T/P" },
+            { dia: "Viernes", hora: "11:00 - 13:00", tipo: "T/P" }
+        ]
+    },
+    {
+        id: "TG",
+        horarios: [
+            { dia: "Martes", hora: "16:00 - 18:00", tipo: "T/P" },
+            { dia: "Viernes", hora: "16:00 - 18:00", tipo: "T/P" }
+        ]
+    },
+    {
+        id: "TH",
+        horarios: [
+            { dia: "Martes", hora: "18:00 - 20:00", tipo: "T/P" },
+            { dia: "Viernes", hora: "18:00 - 20:00", tipo: "T/P" }
         ]
     }
 ];
@@ -339,6 +372,58 @@ const turnosObj1Practica = [
     { id: "C13", horarios: [{ dia: "Jueves", hora: "19:00 - 20:30", tipo: "P" }] }
 ];
 
+const turnosInglesTeoria = [
+    {
+        id: "Comisión Martes",
+        horarios: [
+            { dia: "Martes", hora: "13:00 - 16:00", tipo: "T" }
+        ]
+    },
+    {
+        id: "Comisión Viernes",
+        horarios: [
+            { dia: "Viernes", hora: "8:00 - 11:00", tipo: "T" }
+        ]
+    }
+];
+
+const turnosInglesPractica = [
+    {
+        id: "Florencia Regueral",
+        horarios: [
+            { dia: "Lunes", hora: "8:15 - 11:15", tipo: "P" }
+        ]
+    },
+    {
+        id: "Gabriela Fraga",
+        horarios: [
+            { dia: "Miércoles", hora: "9:00 - 12:00", tipo: "P" }
+        ]
+    },
+    {
+        id: "Javier Arguiano",
+        horarios: [
+            { dia: "Jueves", hora: "9:00 - 12:00", tipo: "P" }
+        ]
+    },
+    {
+        id: "Ma. Paula Gavagnin",
+        horarios: [
+            { dia: "Viernes", hora: "15:00 - 18:00", tipo: "P" }
+        ]
+    }
+];
+
+// Asignar turnos explícitos a materias que tienen definición separada por año
+const materiaTaller2025 = materias.find(m => m.nombre === 'TALLER - 2025');
+if (materiaTaller2025) materiaTaller2025.turnos = turnosTaller;
+
+const materiaTaller2026 = materias.find(m => m.nombre === 'TALLER - 2026');
+if (materiaTaller2026) materiaTaller2026.turnos = turnosTaller2026;
+
+const materiaIngles2026 = materias.find(m => m.nombre === 'INGLES - 2026');
+if (materiaIngles2026) materiaIngles2026.turnos = { teoria: turnosInglesTeoria, practica: turnosInglesPractica };
+
 // Horas y días base (todas las posibles)
 
 // Horas y días base (todas las posibles)
@@ -412,47 +497,65 @@ function compressTurnosGlobales() {
     // Construir cache a partir del listado `materias` para evitar depender de window
     try {
         materias.forEach(m => {
-            const materiaName = getMateriaBaseName(m.nombre);
-            const cacheKey = materiaName.toLowerCase();
-            const norm = cacheKey;
+            const fullKey = getMateriaFullKey(m.nombre);
+            const baseKey = getMateriaBaseKey(m.nombre);
 
-            // Buscar en propiedades globales `window` si existe
+            function store(key, value) {
+                compressedTurnosCache[key] = value;
+            }
+
+            function storeBaseIfMissing(value) {
+                if (!(baseKey in compressedTurnosCache)) compressedTurnosCache[baseKey] = value;
+            }
+
+            if (m.turnos) {
+                if (Array.isArray(m.turnos)) {
+                    const comp = m.turnos.map(turno => ({ ...turno, horarios: compressTurnoHorariosArray(turno.horarios || []) }));
+                    store(fullKey, comp);
+                    storeBaseIfMissing(comp);
+                    return;
+                }
+                if (isTeoriaPracticaTurnos(m.turnos)) {
+                    const obj = {};
+                    if (Array.isArray(m.turnos.teoria)) obj.teoria = m.turnos.teoria.map(t => ({ ...t, horarios: compressTurnoHorariosArray(t.horarios || []) }));
+                    if (Array.isArray(m.turnos.practica)) obj.practica = m.turnos.practica.map(t => ({ ...t, horarios: compressTurnoHorariosArray(t.horarios || []) }));
+                    store(fullKey, obj);
+                    storeBaseIfMissing(obj);
+                    return;
+                }
+            }
+
             if (typeof window !== 'undefined') {
                 Object.keys(window).forEach(key => {
                     if (!key.toLowerCase().startsWith('turnos')) return;
-                    const keyTail = key.substring(6).toLowerCase(); // after 'turnos'
-                    if (!keyTail.includes(norm)) return;
+                    const keyTail = key.substring(6).toLowerCase();
+                    if (!keyTail.includes(baseKey) && !keyTail.includes(fullKey)) return;
                     const val = window[key];
                     if (!val) return;
                     if (Array.isArray(val)) {
                         const compressed = val.map(turno => ({ ...turno, horarios: compressTurnoHorariosArray(turno.horarios || []) }));
-                        compressedTurnosCache[cacheKey] = compressed;
-                        compressedTurnosCache[materiaName] = compressed;
+                        store(fullKey, compressed);
+                        storeBaseIfMissing(compressed);
                     } else if (typeof val === 'object') {
                         const obj = {};
                         if (Array.isArray(val.teoria)) obj.teoria = val.teoria.map(t => ({ ...t, horarios: compressTurnoHorariosArray(t.horarios || []) }));
                         if (Array.isArray(val.practica)) obj.practica = val.practica.map(t => ({ ...t, horarios: compressTurnoHorariosArray(t.horarios || []) }));
                         if (Object.keys(obj).length) {
-                            compressedTurnosCache[cacheKey] = obj;
-                            compressedTurnosCache[materiaName] = obj;
+                            store(fullKey, obj);
+                            storeBaseIfMissing(obj);
                         }
                     }
                 });
             }
 
-            // Fallback: intentar variaciones por evaluación
-            const rawMateria = materiaName;
-            const normalized = rawMateria.toLowerCase();
-            const candidates = [rawMateria, normalized, rawMateria.toUpperCase(), rawMateria.charAt(0).toUpperCase() + normalized.slice(1)];
+            const candidates = [m.nombre, fullKey, baseKey, m.nombre.toLowerCase(), fullKey.toLowerCase(), baseKey.toLowerCase()];
             candidates.forEach(suffix => {
                 try {
                     const maybe = eval('turnos' + suffix);
-                    if (maybe !== undefined) {
-                        if (Array.isArray(maybe)) {
-                            const compressed = maybe.map(turno => ({ ...turno, horarios: compressTurnoHorariosArray(turno.horarios || []) }));
-                            compressedTurnosCache[cacheKey] = compressed;
-                            compressedTurnosCache[rawMateria] = compressed;
-                        }
+                    if (maybe !== undefined && Array.isArray(maybe)) {
+                        const compressed = maybe.map(turno => ({ ...turno, horarios: compressTurnoHorariosArray(turno.horarios || []) }));
+                        store(fullKey, compressed);
+                        storeBaseIfMissing(compressed);
                     }
                 } catch (e) {}
                 try {
@@ -463,8 +566,8 @@ function compressTurnosGlobales() {
                             teoria: Array.isArray(teoria) ? teoria.map(t => ({ ...t, horarios: compressTurnoHorariosArray(t.horarios || []) })) : [],
                             practica: Array.isArray(practica) ? practica.map(t => ({ ...t, horarios: compressTurnoHorariosArray(t.horarios || []) })) : []
                         };
-                        compressedTurnosCache[cacheKey] = compressedObj;
-                        compressedTurnosCache[rawMateria] = compressedObj;
+                        store(fullKey, compressedObj);
+                        storeBaseIfMissing(compressedObj);
                     }
                 } catch (e) {}
             });
@@ -501,6 +604,14 @@ function getMateriaBaseName(name) {
     return withoutYear.replace(/[^a-zA-Z0-9]/g, '');
 }
 
+function getMateriaFullKey(name) {
+    return name.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+}
+
+function getMateriaBaseKey(name) {
+    return getMateriaBaseName(name).toLowerCase();
+}
+
 function isTeoriaPracticaTurnos(turnos) {
     return turnos && typeof turnos === 'object' && !Array.isArray(turnos) && ('teoria' in turnos || 'practica' in turnos);
 }
@@ -525,23 +636,23 @@ function normalizeTurnoArray(arr) {
 }
 
 function lookupTurnosByName(name) {
-    const normalized = getMateriaBaseName(name);
-    const normalizedLower = normalized.toLowerCase();
+    const fullKey = getMateriaFullKey(name);
+    const baseKey = getMateriaBaseKey(name);
     // Si existe cache, devolverlo
-    if (normalizedLower in compressedTurnosCache) return compressedTurnosCache[normalizedLower];
-    if (normalized in compressedTurnosCache) return compressedTurnosCache[normalized];
+    if (fullKey in compressedTurnosCache) return compressedTurnosCache[fullKey];
+    if (baseKey in compressedTurnosCache) return compressedTurnosCache[baseKey];
 
     if (typeof window !== 'undefined') {
         for (const key of Object.keys(window)) {
             if (!key.toLowerCase().startsWith('turnos')) continue;
             const tail = key.substring(6).toLowerCase();
-            if (tail.includes(normLower)) {
+            if (tail.includes(baseKey) || tail.includes(fullKey)) {
                 return window[key];
             }
         }
     }
 
-    const candidates = [normalized, normalized.toLowerCase(), normalized.charAt(0).toUpperCase() + normalized.slice(1).toLowerCase()];
+    const candidates = [name, fullKey, baseKey, name.toLowerCase(), fullKey.toLowerCase(), baseKey.toLowerCase()];
     for (const suffix of candidates) {
         try {
             const maybe = eval('turnos' + suffix);
@@ -746,11 +857,13 @@ function generarTabla() {
 }
 
 // Eventos de la botonera HTML
-document.addEventListener("DOMContentLoaded", function () {
-    // Generar la botonera y binds dinámicos
-    construirBotoneraDinamica();
-    generarTabla();
-});
+if (typeof document !== 'undefined') {
+    document.addEventListener("DOMContentLoaded", function () {
+        // Generar la botonera y binds dinámicos
+        construirBotoneraDinamica();
+        generarTabla();
+    });
+}
 
 // Inicializa los selects de turnos por materia
 // Construye la botonera de forma dinámica según la configuración `materias`
