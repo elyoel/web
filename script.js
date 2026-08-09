@@ -5,7 +5,7 @@ const materias = [
     { nombre: "TALLER - 2025", color: "taller" },
     { nombre: "TALLER - 2026", color: "taller" },
     { nombre: "FOD - 2026", color: "fod" },
-    { nombre: "Semi-Python - 2026", color: "semi" },
+    { nombre: "SemiPython - 2026", color: "semi" },
     { nombre: "AyED - 2026", color: "ayed" },
     { nombre: "Obj 1 - 2026", color: "obj1" },
     { nombre: "INGLES - 2026", color: "ingles" }
@@ -414,15 +414,21 @@ const turnosInglesPractica = [
     }
 ];
 
-// Asignar turnos explícitos a materias que tienen definición separada por año
-const materiaTaller2025 = materias.find(m => m.nombre === 'TALLER - 2025');
-if (materiaTaller2025) materiaTaller2025.turnos = turnosTaller;
+const turnosRegistry = {};
+function registerTurnos(key, data) {
+    if (!key || !data) return;
+    turnosRegistry[key.toLowerCase()] = data;
+}
 
-const materiaTaller2026 = materias.find(m => m.nombre === 'TALLER - 2026');
-if (materiaTaller2026) materiaTaller2026.turnos = turnosTaller2026;
-
-const materiaIngles2026 = materias.find(m => m.nombre === 'INGLES - 2026');
-if (materiaIngles2026) materiaIngles2026.turnos = { teoria: turnosInglesTeoria, practica: turnosInglesPractica };
+registerTurnos('arqui', turnosArqui);
+registerTurnos('mat2', turnosMat2);
+registerTurnos('taller', turnosTaller);
+registerTurnos('taller2026', turnosTaller2026);
+registerTurnos('fod', turnosFOD);
+registerTurnos('semipython', turnosSemiPython);
+registerTurnos('ayed', { teoria: turnosAyEDTeoria, practica: turnosAyEDPractica });
+registerTurnos('obj1', { teoria: turnosObj1Teoria, practica: turnosObj1Practica });
+registerTurnos('ingles', { teoria: turnosInglesTeoria, practica: turnosInglesPractica });
 
 // Horas y días base (todas las posibles)
 
@@ -638,7 +644,6 @@ function normalizeTurnoArray(arr) {
 function lookupTurnosByName(name) {
     const fullKey = getMateriaFullKey(name);
     const baseKey = getMateriaBaseKey(name);
-    // Si existe cache, devolverlo
     if (fullKey in compressedTurnosCache) return compressedTurnosCache[fullKey];
     if (baseKey in compressedTurnosCache) return compressedTurnosCache[baseKey];
 
@@ -646,14 +651,17 @@ function lookupTurnosByName(name) {
         for (const key of Object.keys(window)) {
             if (!key.toLowerCase().startsWith('turnos')) continue;
             const tail = key.substring(6).toLowerCase();
-            if (tail.includes(baseKey) || tail.includes(fullKey)) {
+            if (tail === fullKey || tail === baseKey) {
                 return window[key];
             }
         }
     }
 
-    const candidates = [name, fullKey, baseKey, name.toLowerCase(), fullKey.toLowerCase(), baseKey.toLowerCase()];
+    const candidates = [fullKey.toLowerCase(), baseKey.toLowerCase(), name.toLowerCase(), fullKey, baseKey, name];
     for (const suffix of candidates) {
+        if (typeof suffix === 'string' && suffix in turnosRegistry) {
+            return turnosRegistry[suffix];
+        }
         try {
             const maybe = eval('turnos' + suffix);
             if (maybe !== undefined) return maybe;
@@ -661,7 +669,7 @@ function lookupTurnosByName(name) {
         try {
             const teoria = eval('turnos' + suffix + 'Teoria');
             const practica = eval('turnos' + suffix + 'Practica');
-            if (theoria !== undefined || practica !== undefined) return { teoria: teoria || [], practica: practica || [] };
+            if (teoria !== undefined || practica !== undefined) return { teoria: teoria || [], practica: practica || [] };
         } catch (e) {}
     }
 
@@ -956,6 +964,8 @@ function construirBotoneraDinamica() {
         return box;
     }
 
+    const materiasAgrupadas = new Set();
+
     materiaGroups.forEach(group => {
         const section = document.createElement('section');
         section.className = 'grupo-materias';
@@ -968,7 +978,13 @@ function construirBotoneraDinamica() {
         const groupBox = document.createElement('div');
         groupBox.className = 'grupo-botones';
 
-        const groupMaterias = materias.filter(m => group.claves.includes(getMateriaBaseName(m.nombre)));
+        const groupMaterias = materias.filter(m => {
+            const baseName = getMateriaBaseName(m.nombre).toLowerCase();
+            const belongs = group.claves.some(clave => clave.toLowerCase() === baseName);
+            if (belongs) materiasAgrupadas.add(m.nombre);
+            return belongs;
+        });
+
         groupMaterias.forEach(m => groupBox.appendChild(crearBotonMateria(m)));
 
         if (groupMaterias.length === 0) {
@@ -981,4 +997,22 @@ function construirBotoneraDinamica() {
         section.appendChild(groupBox);
         cont.appendChild(section);
     });
+
+    const otrasMaterias = materias.filter(m => !materiasAgrupadas.has(m.nombre));
+    if (otrasMaterias.length > 0) {
+        const section = document.createElement('section');
+        section.className = 'grupo-materias';
+
+        const title = document.createElement('h2');
+        title.className = 'grupo-titulo';
+        title.textContent = 'Otros';
+        section.appendChild(title);
+
+        const groupBox = document.createElement('div');
+        groupBox.className = 'grupo-botones';
+
+        otrasMaterias.forEach(m => groupBox.appendChild(crearBotonMateria(m)));
+        section.appendChild(groupBox);
+        cont.appendChild(section);
+    }
 }
