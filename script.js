@@ -642,36 +642,16 @@ function normalizeTurnoArray(arr) {
 }
 
 function lookupTurnosByName(name) {
-    const fullKey = getMateriaFullKey(name);
-    const baseKey = getMateriaBaseKey(name);
+    const fullKey = getMateriaFullKey(name); // ej: "taller2026"
+    const baseKey = getMateriaBaseKey(name); // ej: "taller"
+
+    // 1. Prioridad: Buscar en el registro manual (100% confiable)
+    if (fullKey in turnosRegistry) return turnosRegistry[fullKey];
+    if (baseKey in turnosRegistry) return turnosRegistry[baseKey];
+
+    // 2. Respaldo: Buscar en el caché comprimido si existe
     if (fullKey in compressedTurnosCache) return compressedTurnosCache[fullKey];
     if (baseKey in compressedTurnosCache) return compressedTurnosCache[baseKey];
-
-    if (typeof window !== 'undefined') {
-        for (const key of Object.keys(window)) {
-            if (!key.toLowerCase().startsWith('turnos')) continue;
-            const tail = key.substring(6).toLowerCase();
-            if (tail === fullKey || tail === baseKey) {
-                return window[key];
-            }
-        }
-    }
-
-    const candidates = [fullKey.toLowerCase(), baseKey.toLowerCase(), name.toLowerCase(), fullKey, baseKey, name];
-    for (const suffix of candidates) {
-        if (typeof suffix === 'string' && suffix in turnosRegistry) {
-            return turnosRegistry[suffix];
-        }
-        try {
-            const maybe = eval('turnos' + suffix);
-            if (maybe !== undefined) return maybe;
-        } catch (e) {}
-        try {
-            const teoria = eval('turnos' + suffix + 'Teoria');
-            const practica = eval('turnos' + suffix + 'Practica');
-            if (teoria !== undefined || practica !== undefined) return { teoria: teoria || [], practica: practica || [] };
-        } catch (e) {}
-    }
 
     return [];
 }
