@@ -1,14 +1,84 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+.site-header {
+  background: #222;
+  color: #fff;
+  padding: 16px 24px;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: #fff;
+  color: #222;
+}
+
+main {
+  padding: 24px;
+}
+
 #botonera {
   display: flex;
-  gap: 32px;
+  flex-direction: column;
+  gap: 24px;
   margin-bottom: 20px;
+}
+
+.grupo-materias {
+  border: 2px solid #222;
+  padding: 16px;
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+.grupo-titulo {
+  margin: 0 0 12px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.grupo-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
   justify-content: center;
+}
+
+.grupo-vacio {
+  font-style: italic;
+  color: #666;
+  min-width: 200px;
+  padding: 14px 18px;
+  border: 2px dashed #999;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .boton-materia {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 180px;
 }
 
 .btn-grande {
@@ -97,6 +167,12 @@ th {
   font-weight: bold;
 }
 
+.obj1 {
+  background: #ffde7a;
+  color: #000;
+  font-weight: bold;
+}
+
 .taller {
   background: #ffc0cb;
   color: #000;
@@ -137,5 +213,49 @@ th {
   }
   th, td {
     padding: 4px 2px;
+  }
+}
+
+.cartelera-list {
+  display: grid;
+  gap: 18px;
+}
+
+.cartelera-card {
+  background: #fff;
+  border: 2px solid #222;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.cartelera-card h2 {
+  margin: 0 0 12px;
+  font-size: 1.3rem;
+}
+
+.cartelera-details {
+  display: grid;
+  gap: 8px;
+}
+
+.field {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.field-key {
+  font-weight: 700;
+  color: #333;
+}
+
+.field-value {
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  .cartelera-card {
+    padding: 16px;
   }
 }

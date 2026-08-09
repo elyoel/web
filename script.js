@@ -3,9 +3,25 @@ const materias = [
     { nombre: "ARQUI - 2025", color: "cadp" },
     { nombre: "MAT2 - 2025", color: "mat1" },
     { nombre: "TALLER - 2025", color: "taller" },
-    { nombre: "FOD - 2025", color: "fod" },
+    { nombre: "FOD - 2026", color: "fod" },
     { nombre: "Semi-Python - 2026", color: "semi" },
-    { nombre: "AyED - 2026", color: "ayed" }
+    { nombre: "AyED - 2026", color: "ayed" },
+    { nombre: "Obj 1 - 2026", color: "obj1" }
+];
+
+const materiaGroups = [
+    {
+        titulo: "Primer Año",
+        claves: ["MAT2", "ARQUI", "TALLER"]
+    },
+    {
+        titulo: "Segundo Año",
+        claves: ["FOD", "SemiPython", "AyED", "Obj1"]
+    },
+    {
+        titulo: "Tercer Año",
+        claves: []
+    }
 ];
 
 // Turnos de ARQUI (no tocar, ya está bien)
@@ -290,6 +306,37 @@ const turnosAyEDPractica = [
             { dia: "Viernes", hora: "14:00 - 16:00", tipo: "P" }
         ]
     }
+];
+
+const turnosObj1Teoria = [
+    {
+        id: "TT",
+        horarios: [
+            { dia: "Martes", hora: "14:00 - 17:00", tipo: "T" }
+        ]
+    },
+    {
+        id: "TM",
+        horarios: [
+            { dia: "Jueves", hora: "9:30 - 12:30", tipo: "T" }
+        ]
+    }
+];
+
+const turnosObj1Practica = [
+    { id: "C1", horarios: [{ dia: "Lunes", hora: "17:30 - 19:00", tipo: "P" }] },
+    { id: "C2", horarios: [{ dia: "Lunes", hora: "19:00 - 20:30", tipo: "P" }] },
+    { id: "C3", horarios: [{ dia: "Lunes", hora: "19:00 - 20:30", tipo: "P" }] },
+    { id: "C4", horarios: [{ dia: "Martes", hora: "11:00 - 12:30", tipo: "P" }] },
+    { id: "C5", horarios: [{ dia: "Martes", hora: "12:30 - 14:00", tipo: "P" }] },
+    { id: "C6", horarios: [{ dia: "Jueves", hora: "11:00 - 12:30", tipo: "P" }] },
+    { id: "C7", horarios: [{ dia: "Jueves", hora: "11:00 - 12:30", tipo: "P" }] },
+    { id: "C8", horarios: [{ dia: "Jueves", hora: "12:30 - 14:00", tipo: "P" }] },
+    { id: "C9", horarios: [{ dia: "Jueves", hora: "12:30 - 14:00", tipo: "P" }] },
+    { id: "C10", horarios: [{ dia: "Jueves", hora: "14:00 - 15:30", tipo: "P" }] },
+    { id: "C11", horarios: [{ dia: "Miércoles", hora: "17:30 - 19:00", tipo: "P" }] },
+    { id: "C12", horarios: [{ dia: "Jueves", hora: "19:00 - 20:30", tipo: "P" }] },
+    { id: "C13", horarios: [{ dia: "Jueves", hora: "19:00 - 20:30", tipo: "P" }] }
 ];
 
 // Horas y días base (todas las posibles)
@@ -715,9 +762,13 @@ function construirBotoneraDinamica() {
         return name.replace(/[^a-zA-Z0-9]/g, '_');
     }
 
-    // lookupTurnosByName y helpers están en ámbito global arriba
+    function formatTurnoLabel(turno) {
+        const summary = (turno.horarios || []).map(h => `${h.dia} ${h.hora}`).join(' / ');
+        return summary ? `${turno.id} — ${summary}` : turno.id;
+    }
 
-    materias.forEach(m => {
+    // lookupTurnosByName y helpers están en ámbito global arriba
+    function crearBotonMateria(m) {
         const box = document.createElement('div');
         box.className = 'boton-materia';
 
@@ -727,12 +778,9 @@ function construirBotoneraDinamica() {
         btn.dataset.materia = m.nombre;
 
         const key = cleanId(m.nombre);
-
-        // selects container
         const selects = document.createElement('div');
         selects.style.marginTop = '8px';
 
-        // Create selects depending on materia
         const turnos = lookupTurnosByName(m.nombre);
         if (isTeoriaPracticaTurnos(turnos)) {
             const selT = document.createElement('select');
@@ -740,21 +788,25 @@ function construirBotoneraDinamica() {
             selT.style.display = 'none';
             selT.innerHTML = '<option value="">Selecciona teoría</option>';
             (turnos.teoria || []).forEach(t => {
-                const opt = document.createElement('option'); opt.value = t.id; opt.textContent = t.id; selT.appendChild(opt);
+                const opt = document.createElement('option');
+                opt.value = t.id;
+                opt.textContent = formatTurnoLabel(t);
+                selT.appendChild(opt);
             });
+            selT.addEventListener('change', () => { turnosSeleccionados[m.nombre].teoria = selT.value; generarTabla(); });
+            selects.appendChild(selT);
 
             const selP = document.createElement('select');
             selP.id = `turnoSelect-${key}-practica`;
             selP.style.display = 'none';
             selP.innerHTML = '<option value="">Selecciona práctica</option>';
             (turnos.practica || []).forEach(t => {
-                const opt = document.createElement('option'); opt.value = t.id; opt.textContent = t.id; selP.appendChild(opt);
+                const opt = document.createElement('option');
+                opt.value = t.id;
+                opt.textContent = formatTurnoLabel(t);
+                selP.appendChild(opt);
             });
-
-            selT.addEventListener('change', () => { turnosSeleccionados[m.nombre].teoria = selT.value; generarTabla(); });
             selP.addEventListener('change', () => { turnosSeleccionados[m.nombre].practica = selP.value; generarTabla(); });
-
-            selects.appendChild(selT);
             selects.appendChild(selP);
         } else {
             const sel = document.createElement('select');
@@ -762,17 +814,18 @@ function construirBotoneraDinamica() {
             sel.style.display = 'none';
             sel.innerHTML = '<option value="">Selecciona turno</option>';
             (turnos || []).forEach(t => {
-                const opt = document.createElement('option'); opt.value = t.id; opt.textContent = t.id; sel.appendChild(opt);
+                const opt = document.createElement('option');
+                opt.value = t.id;
+                opt.textContent = formatTurnoLabel(t);
+                sel.appendChild(opt);
             });
             sel.addEventListener('change', () => { turnosSeleccionados[m.nombre] = sel.value; generarTabla(); });
             selects.appendChild(sel);
         }
 
-        // Button toggle
         btn.addEventListener('click', function () {
             materiasSeleccionadas[m.nombre] = !materiasSeleccionadas[m.nombre];
             this.classList.toggle('active', materiasSeleccionadas[m.nombre]);
-            // show/hide selects
             if (isTeoriaPracticaTurnos(lookupTurnosByName(m.nombre))) {
                 const t = document.getElementById(`turnoSelect-${key}-teoria`);
                 const p = document.getElementById(`turnoSelect-${key}-practica`);
@@ -787,6 +840,32 @@ function construirBotoneraDinamica() {
 
         box.appendChild(btn);
         box.appendChild(selects);
-        cont.appendChild(box);
+        return box;
+    }
+
+    materiaGroups.forEach(group => {
+        const section = document.createElement('section');
+        section.className = 'grupo-materias';
+
+        const title = document.createElement('h2');
+        title.className = 'grupo-titulo';
+        title.textContent = group.titulo;
+        section.appendChild(title);
+
+        const groupBox = document.createElement('div');
+        groupBox.className = 'grupo-botones';
+
+        const groupMaterias = materias.filter(m => group.claves.includes(getMateriaBaseName(m.nombre)));
+        groupMaterias.forEach(m => groupBox.appendChild(crearBotonMateria(m)));
+
+        if (groupMaterias.length === 0) {
+            const note = document.createElement('div');
+            note.className = 'grupo-vacio';
+            note.textContent = 'Próximamente';
+            groupBox.appendChild(note);
+        }
+
+        section.appendChild(groupBox);
+        cont.appendChild(section);
     });
 }
