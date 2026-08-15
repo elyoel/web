@@ -315,6 +315,13 @@ const turnosTaller2026 = [
             { dia: "Martes", hora: "18:00 - 20:00", tipo: "T/P" },
             { dia: "Viernes", hora: "18:00 - 20:00", tipo: "T/P" }
         ]
+    },
+    {
+        id: "TI",
+        horarios: [
+            { dia: "Lunes", hora: "10:00 - 12:00", tipo: "T/P"},
+            { dia: "Jueves", hora: "10:00 - 12:00", tipo: "T/P"}
+        ]
     }
 ];
 
