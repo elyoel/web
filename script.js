@@ -8,7 +8,9 @@ const materias = [
     { nombre: "SemiPython - 2026", color: "semi" },
     { nombre: "AyED - 2026", color: "ayed" },
     { nombre: "Obj 1 - 2026", color: "obj1" },
-    { nombre: "INGLES - 2026", color: "ingles" }
+    { nombre: "INGLES - 2026", color: "ingles" },
+    { nombre: "ISO - 2026", color: "obj1" },
+    { nombre: "INGE1 - 2026", color: "ayed" }
 ];
 
 const materiaGroups = [
@@ -18,13 +20,81 @@ const materiaGroups = [
     },
     {
         titulo: "Segundo Año",
-        claves: ["FOD", "SemiPython", "AyED", "Obj1", "INGLES"]
+        claves: ["FOD", "SemiPython", "AyED", "Obj1", "INGLES", "ISO", "INGE1"]
     },
     {
         titulo: "Tercer Año",
         claves: []
     }
 ];
+
+const turnosINGE1Teoria = [
+    {
+        id: "1",
+        horarios: [
+            { dia: "Lunes", hora: "11:00", tipo: "T" }
+        ]
+    },
+    {
+        id: "2",
+        horarios: [
+            { dia: "Miércoles", hora: "14:00", tipo: "T" }
+        ]
+    },
+    {
+        id: "3",
+        horarios: [
+            { dia: "Jueves", hora: "17:00", tipo: "T" }
+        ]
+    }
+];
+
+const turnosINGE1Practica = [
+    {
+        id: "1",
+        horarios: [
+            { dia: "Lunes", hora: "8:00 - 9:30", tipo: "P" },
+            { dia: "Miércoles", hora: "8:00 - 9:30", tipo: "P" }
+        ]
+    },
+    {
+        id: "2",
+        horarios: [
+            { dia: "Lunes", hora: "18:30 - 20:00", tipo: "P" },
+            { dia: "Miércoles", hora: "16:30 - 18:00", tipo: "P" }
+        ]
+    },
+    {
+        id: "3",
+        horarios: [
+            { dia: "Martes", hora: "18:30 - 20:00", tipo: "P" },
+            { dia: "Viernes", hora: "19:00 - 20:30", tipo: "P" }
+        ]
+    }
+];
+
+
+const turnosISO = [
+    {
+        id: "1", // Turno Mañana
+        horarios: [
+            { dia: "Martes", hora: "8:30 - 10:00", tipo: "T" },
+            { dia: "Viernes", hora: "11:30 - 13:00", tipo: "T" },
+            { dia: "Jueves", hora: "8:00 - 9:30", tipo: "P" },
+            { dia: "Viernes", hora: "13:00 - 14:30", tipo: "P" }
+        ]
+    },
+    {
+        id: "2", // Turno Tarde
+        horarios: [
+            { dia: "Miércoles", hora: "19:00 - 20:30", tipo: "T" },
+            { dia: "Viernes", hora: "19:00 - 20:30", tipo: "T" },
+            { dia: "Jueves", hora: "19:00 - 20:30", tipo: "P" },
+            { dia: "Viernes", hora: "17:30 - 19:00", tipo: "P" }
+        ]
+    }
+];
+
 
 // Turnos de ARQUI (no tocar, ya está bien)
 const turnosArqui = [
@@ -429,6 +499,8 @@ registerTurnos('semipython', turnosSemiPython);
 registerTurnos('ayed', { teoria: turnosAyEDTeoria, practica: turnosAyEDPractica });
 registerTurnos('obj1', { teoria: turnosObj1Teoria, practica: turnosObj1Practica });
 registerTurnos('ingles', { teoria: turnosInglesTeoria, practica: turnosInglesPractica });
+registerTurnos('iso', turnosISO);
+registerTurnos('inge1', { teoria: turnosINGE1Teoria, practica: turnosINGE1Practica });
 
 // Horas y días base (todas las posibles)
 
