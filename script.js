@@ -32,19 +32,19 @@ const turnosINGE1Teoria = [
     {
         id: "1",
         horarios: [
-            { dia: "Lunes", hora: "11:00", tipo: "T" }
+            { dia: "Lunes", hora: "11:00 - 14:00", tipo: "T" }
         ]
     },
     {
         id: "2",
         horarios: [
-            { dia: "Miércoles", hora: "14:00", tipo: "T" }
+            { dia: "Miércoles", hora: "14:00 - 17:00", tipo: "T" }
         ]
     },
     {
         id: "3",
         horarios: [
-            { dia: "Jueves", hora: "17:00", tipo: "T" }
+            { dia: "Jueves", hora: "17:00 - 20:00", tipo: "T" }
         ]
     }
 ];
