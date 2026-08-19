@@ -11,7 +11,9 @@ const materias = [
     { nombre: "INGLES - 2026", color: "ingles" },
     { nombre: "ISO - 2026", color: "obj1" },
     { nombre: "INGE1 - 2026", color: "ayed" },
-    { nombre: "MAT4 - 2026", color: "mat1" }
+    { nombre: "MAT4 - 2026", color: "mat1" },
+    { nombre: "DBD - 2026", color: "fod" }
+    
 ];
 
 const materiaGroups = [
@@ -21,7 +23,7 @@ const materiaGroups = [
     },
     {
         titulo: "Segundo Año",
-        claves: ["FOD", "SemiPython", "AyED", "Obj1", "INGLES", "ISO", "INGE1"]
+        claves: ["FOD", "SemiPython", "AyED", "Obj1", "INGLES", "ISO", "INGE1", "DBD"]
     },
     {
         titulo: "Tercer Año",
@@ -526,6 +528,8 @@ registerTurnos('ingles', { teoria: turnosInglesTeoria, practica: turnosInglesPra
 registerTurnos('iso', turnosISO);
 registerTurnos('inge1', { teoria: turnosINGE1Teoria, practica: turnosINGE1Practica });
 registerTurnos('mat4', turnosMAT4);
+registerTurnos('dbd', turnosFOD);
+
 
 // Horas y días base (todas las posibles)
 
