@@ -458,14 +458,13 @@ const turnosObj1Practica = [
     { id: "C3", horarios: [{ dia: "Lunes", hora: "19:00 - 20:30", tipo: "P" }] },
     { id: "C4", horarios: [{ dia: "Martes", hora: "11:00 - 12:30", tipo: "P" }] },
     { id: "C5", horarios: [{ dia: "Martes", hora: "12:30 - 14:00", tipo: "P" }] },
-    { id: "C6", horarios: [{ dia: "Jueves", hora: "11:00 - 12:30", tipo: "P" }] },
-    { id: "C7", horarios: [{ dia: "Jueves", hora: "11:00 - 12:30", tipo: "P" }] },
-    { id: "C8", horarios: [{ dia: "Jueves", hora: "12:30 - 14:00", tipo: "P" }] },
+    { id: "C6", horarios: [{ dia: "Miércoles", hora: "17:30 - 19:00", tipo: "P" }] },
+    { id: "C7", horarios: [{ dia: "Miércoles", hora: "19:00 - 20:30", tipo: "P" }] },
+    { id: "C8", horarios: [{ dia: "Jueves", hora: "11:00 - 12:30", tipo: "P" }] },
     { id: "C9", horarios: [{ dia: "Jueves", hora: "12:30 - 14:00", tipo: "P" }] },
-    { id: "C10", horarios: [{ dia: "Jueves", hora: "14:00 - 15:30", tipo: "P" }] },
-    { id: "C11", horarios: [{ dia: "Miércoles", hora: "17:30 - 19:00", tipo: "P" }] },
-    { id: "C12", horarios: [{ dia: "Jueves", hora: "19:00 - 20:30", tipo: "P" }] },
-    { id: "C13", horarios: [{ dia: "Jueves", hora: "19:00 - 20:30", tipo: "P" }] }
+    { id: "C10", horarios: [{ dia: "Jueves", hora: "12:30 - 14:00", tipo: "P" }] },
+    { id: "C11", horarios: [{ dia: "Jueves", hora: "14:00 - 15:30", tipo: "P" }] },
+    { id: "C12", horarios: [{ dia: "Jueves", hora: "19:00 - 20:30", tipo: "P" }] }
 ];
 
 const turnosInglesTeoria = [
