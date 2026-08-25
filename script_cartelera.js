@@ -1,6 +1,8 @@
 // Usamos el proxy corsproxy.io delante de la URL de la facultad
 const urlBase = 'https://gestiondocente.info.unlp.edu.ar/cartelera/data/0/10?idMateria=';
-const url = 'https://corsproxy.io/?' + encodeURIComponent(urlBase);
+
+const url = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(urlBase);
+//const url = 'https://corsproxy.io/?' + encodeURIComponent(urlBase);
 
 const contenedor = document.getElementById('contenedor-datos');
 
