@@ -1,0 +1,28 @@
+name: Actualizar datos de cartelera
+
+on:
+  schedule:
+    - cron: '0 */1 * * *'
+  workflow_dispatch:
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Copiar repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Ejecutar script de actualización
+        run: node actualizar-datos.js
+
+      - name: Guardar y subir cambios al repositorio
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'Auto: Actualizar datos de la cartelera'
+          file_pattern: horarios.json
