@@ -19,7 +19,7 @@ jobs:
           node-version: '18'
 
       - name: Ejecutar script de actualización
-        run: node actualizar-datos.js
+        run: node actualizador.js
 
       - name: Guardar y subir cambios al repositorio
         uses: stefanzweifel/git-auto-commit-action@v4
