@@ -2,7 +2,7 @@ name: Actualizar datos de cartelera
 
 on:
   schedule:
-    - cron: '0 */1 * * *'
+    - cron: '0 */24 * * *'
   workflow_dispatch:
 
 jobs:
